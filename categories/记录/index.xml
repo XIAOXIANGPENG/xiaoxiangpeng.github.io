@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 改BUG的大橘</title>
-    <link>https://dev.tflasp.fun/post/</link>
-    <description>Recent content in Posts on 改BUG的大橘</description>
+    <title>记录 on 改BUG的大橘</title>
+    <link>https://dev.tflasp.fun/categories/%E8%AE%B0%E5%BD%95/</link>
+    <description>Recent content in 记录 on 改BUG的大橘</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 31 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://dev.tflasp.fun/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dev.tflasp.fun/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于大橘都知道些啥</title>
       <link>https://dev.tflasp.fun/2024/pveinstall/</link>
