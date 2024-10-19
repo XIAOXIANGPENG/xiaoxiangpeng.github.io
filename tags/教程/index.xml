@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>教程 on TFL</title>
+    <link>https://tech.tflasp.fun/tags/%E6%95%99%E7%A8%8B/</link>
+    <description>Recent content in 教程 on TFL</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.tflasp.fun/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【归档】Proxmox VE更新CPU微码</title>
+      <link>https://tech.tflasp.fun/2024/microcode/</link>
+      <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/2024/microcode/</guid>
+      <description>问题重现 PVE 启动时，看到屏幕上有提示要求更新 microcode。 添加仓库 需要添加 unstable repo： echo &amp;quot;deb http://deb.debian.org/debian/ unstable non-free-firmware&amp;quot; &amp;gt; /etc/apt/sources.list.d/debian-unstable.list 执行更新： apt update &amp;amp;&amp;amp; apt list --upgradable 安装微码，in</description>
+    </item>
+  </channel>
+</rss>

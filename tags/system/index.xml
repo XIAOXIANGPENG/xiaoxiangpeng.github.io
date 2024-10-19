@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>System on TFL</title>
+    <link>https://tech.tflasp.fun/tags/system/</link>
+    <description>Recent content in System on TFL</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.tflasp.fun/tags/system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【教程】保障数据安全，关闭Bitlocker</title>
+      <link>https://tech.tflasp.fun/2024/disable-bitlocker/</link>
+      <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/2024/disable-bitlocker/</guid>
+      <description>前言 近期有几个朋友笔记本硬盘坏了，拿去恢复数据，硬件层面的问题解决后发现硬盘有BitLocker加密，而他全然不知道此事，微软账号里也没有备</description>
+    </item>
+  </channel>
+</rss>

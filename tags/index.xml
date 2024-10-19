@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on 改BUG的大橘</title>
-    <link>https://dev.tflasp.fun/tags/</link>
-    <description>Recent content in Tags on 改BUG的大橘</description>
+    <title>Tags on TFL</title>
+    <link>https://tech.tflasp.fun/tags/</link>
+    <description>Recent content in Tags on TFL</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://dev.tflasp.fun/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.tflasp.fun/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>记录</title>
-      <link>https://dev.tflasp.fun/tags/%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://dev.tflasp.fun/tags/%E8%AE%B0%E5%BD%95/</guid>
+      <title>System</title>
+      <link>https://tech.tflasp.fun/tags/system/</link>
+      <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/tags/system/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>链接</title>
+      <link>https://tech.tflasp.fun/tags/%E9%93%BE%E6%8E%A5/</link>
+      <pubDate>Fri, 23 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/tags/%E9%93%BE%E6%8E%A5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PVE</title>
+      <link>https://tech.tflasp.fun/tags/pve/</link>
+      <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/tags/pve/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>教程</title>
+      <link>https://tech.tflasp.fun/tags/%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/tags/%E6%95%99%E7%A8%8B/</guid>
       <description></description>
     </item>
   </channel>

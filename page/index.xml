@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pages on 改BUG的大橘</title>
-    <link>https://dev.tflasp.fun/page/</link>
-    <description>Recent content in Pages on 改BUG的大橘</description>
+    <title>Pages on TFL</title>
+    <link>https://tech.tflasp.fun/page/</link>
+    <description>Recent content in Pages on TFL</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://dev.tflasp.fun/page/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tech.tflasp.fun/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>https://dev.tflasp.fun/about/</link>
-      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://dev.tflasp.fun/about/</guid>
-      <description>主站地址：tflasp.fun THIS SITE DEPLOY ON DEV.TFLASP.FUN ! Blog Dev version , For reference only 由 改BUG的大橘（TFL-ASP）本人搭建的个人博客，还有很多功能待完善，欢迎联系！</description>
+      <link>https://tech.tflasp.fun/about/</link>
+      <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/about/</guid>
+      <description>由 TFL（TFL-ASP）本人搭建的个人博客，若想获取更多信息，欢迎联系！ Email: tfldd@outlook.com tflasp@qq.com Learn more and contribute on GitHub.</description>
     </item>
     <item>
       <title>Links</title>
-      <link>https://dev.tflasp.fun/links/</link>
+      <link>https://tech.tflasp.fun/links/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://dev.tflasp.fun/links/</guid>
+      <guid>https://tech.tflasp.fun/links/</guid>
       <description>相关链接</description>
     </item>
     <item>
       <title>Archives</title>
-      <link>https://dev.tflasp.fun/archives/</link>
+      <link>https://tech.tflasp.fun/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://dev.tflasp.fun/archives/</guid>
+      <guid>https://tech.tflasp.fun/archives/</guid>
       <description></description>
     </item>
     <item>
       <title>Search</title>
-      <link>https://dev.tflasp.fun/search/</link>
+      <link>https://tech.tflasp.fun/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://dev.tflasp.fun/search/</guid>
+      <guid>https://tech.tflasp.fun/search/</guid>
       <description></description>
     </item>
   </channel>

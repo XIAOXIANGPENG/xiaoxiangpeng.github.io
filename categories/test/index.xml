@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Test on 改BUG的大橘</title>
-    <link>https://dev.tflasp.fun/categories/test/</link>
-    <description>Recent content in Test on 改BUG的大橘</description>
+    <title>Test on TFL</title>
+    <link>https://tech.tflasp.fun/categories/test/</link>
+    <description>Recent content in Test on TFL</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://dev.tflasp.fun/categories/test/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tech.tflasp.fun/categories/test/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

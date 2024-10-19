@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='安装配置 timeshift 来对 PVE 进行备份和恢复'><title>【归档】PVE安装配置timeshift</title>
+
+<link rel='canonical' href='https://tech.tflasp.fun/2024/timeshift/'>
+
+<link rel="stylesheet" href="/scss/style.min.46208cabd58e8bcef0cfb7d7ea6b561adcca3b91dd1fc6657493a44f03c5db75.css"><meta property='og:title' content='【归档】PVE安装配置timeshift'>
+<meta property='og:description' content='安装配置 timeshift 来对 PVE 进行备份和恢复'>
+<meta property='og:url' content='https://tech.tflasp.fun/2024/timeshift/'>
+<meta property='og:site_name' content='TFL'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PVE' /><meta property='article:published_time' content='2024-08-21T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-08-21T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="【归档】PVE安装配置timeshift">
+<meta name="twitter:description" content="安装配置 timeshift 来对 PVE 进行备份和恢复">
+    <link rel="shortcut icon" href="favicon.png" />
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  
+
+
+    </head>
+    <body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "dark");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    <!-- 
+        extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://tech.tflasp.fun/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hud8c3eacc67205865338b9c4de27b56c0_418856_300x0_resize_box_3.png" width="300"
+                            height="273" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💬</span>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">TFL</a></h1>
+        <h2 class="site-description">Tran ADJ Fail</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://blog.csdn.net/Dd_w606'
+                            target="_blank"
+                            title="CSDN"
+                        >
+                            
+                            
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a 
+                            href='https://tflasp.fun/2024/links/'
+                            target="_blank"
+                            title="FileShare"
+                        >
+                            
+                            
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-zip"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 20.735a2 2 0 0 1 -1 -1.735v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-1" /><path d="M11 17a2 2 0 0 1 2 2v2a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-2a2 2 0 0 1 2 -2z" /><path d="M11 5l-1 0" /><path d="M13 7l-1 0" /><path d="M11 9l-1 0" /><path d="M13 11l-1 0" /><path d="M11 13l-1 0" /><path d="M13 15l-1 0" /></svg>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a 
+                            href='https://github.com/TFL-ASP'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+<main class="main full-width">
+    
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/pve/" >
+                PVE
+            </a>
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B/" >
+                教程
+            </a>
+        
+            <a href="/categories/%E5%BD%92%E6%A1%A3/" >
+                归档
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2024/timeshift/">【归档】PVE安装配置timeshift</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        安装配置 timeshift 来对 PVE 进行备份和恢复
+    </h3>
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 21, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    1904字
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>前面在安装 PVE 时，选择了留出 50G 大小的空间给 timeshift 使用。</p>
+<h2 id="为-timeshift-准备分区">为 timeshift 准备分区</h2>
+<h3 id="查看当前磁盘分区情况">查看当前磁盘分区情况</h3>
+<pre><code class="language-bash">fdisk -l
+</code></pre>
+<p>查看当前硬盘情况：</p>
+<pre><code class="language-bash">Disk /dev/nvme0n1: 465.76 GiB, 500107862016 bytes, 976773168 sectors
+Disk model: WDC WDS500G1B0C-00S6U0                  
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 000372CE-8B4D-4B12-974B-99C231DB3D67
+
+Device           Start       End   Sectors  Size Type
+/dev/nvme0n1p1      34      2047      2014 1007K BIOS boot
+/dev/nvme0n1p2    2048   2099199   2097152    1G EFI System
+/dev/nvme0n1p3 2099200 838860800 836761601  399G Linux LVM
+
+
+Disk /dev/mapper/pve-swap: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/pve-root: 96 GiB, 103079215104 bytes, 201326592 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+</code></pre>
+<p>这是一个大小为 480G 的 nvme SSD 硬盘，实际可用空间为 465G。在安装 PVE 时我将 hdsize 设置为 400G, 因此 PVE 使用的空间只有400G。从上面输出可以看到：</p>
+<pre><code class="language-bash">/dev/nvme0n1p1      34      2047      2014 1007K BIOS boot
+/dev/nvme0n1p2    2048   2099199   2097152    1G EFI System
+/dev/nvme0n1p3 2099200 838860800 836761601  399G Linux LVM
+</code></pre>
+<p>nvme0n1p1 是 BIOS， nvme0n1p2 是 EFI 分区，PVE 使用的是 nvme0n1p3，399G。</p>
+<p>另外可以看到：</p>
+<pre><code class="language-bash">Disk /dev/mapper/pve-swap: 8 GiB, 8589934592 bytes, 16777216 sectors
+Disk /dev/mapper/pve-root: 96 GiB, 103079215104 bytes, 201326592 sectors
+</code></pre>
+<p>swap 使用了 8G， pve root 使用了 96 G。</p>
+<pre><code class="language-bash">lsblk -f
+</code></pre>
+<p>可以看到 nvme0n1p3 是一个 LVM2，400G 的总空间中，内部被分为 pve-swap / pve-root / pve-data_tmeta</p>
+<pre><code class="language-bash">
+NAME               FSTYPE      FSVER    LABEL UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
+nvme0n1                                                                                             
+|-nvme0n1p1                                                                                         
+|-nvme0n1p2        vfat        FAT32          26F2-091E                              1021.6M     0% /boot/efi
+`-nvme0n1p3        LVM2_member LVM2 001       foXyBZ-IPQT-wOCF-DWSN-u88a-sBVD-LaZ9zn                
+  |-pve-swap       swap        1              c5d97cb5-4d18-4f43-a36f-fb67eb8dcc84                  [SWAP]
+  |-pve-root       ext4        1.0            a0a46add-dda5-42b4-a978-97d363eeddd0     85.2G     4% /
+  |-pve-data_tmeta                                                                                  
+  | `-pve-data                                                                                      
+  `-pve-data_tdata                                                                                  
+    `-pve-data   
+</code></pre>
+<p>剩余的大约 60G 的空间在这里没有显示。</p>
+<h3 id="添加-timeshift-分区">添加 timeshift 分区</h3>
+<pre><code class="language-bash">fdisk /dev/nvme0n1
+</code></pre>
+<p>输出为：</p>
+<pre><code class="language-bash">Welcome to fdisk (util-linux 2.38.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+This disk is currently in use - repartitioning is probably a bad idea.
+It's recommended to umount all file systems, and swapoff all swap
+partitions on this disk.
+</code></pre>
+<p>在警告说磁盘使用中，重新分区不是一个好注意。不过我们是操作剩余空间，比较安全。</p>
+<p>输入 m 获得帮助：</p>
+<pre><code class="language-bash">Command (m for help): m
+
+Help:
+
+  GPT
+   M   enter protective/hybrid MBR
+
+  Generic
+   d   delete a partition
+   F   list free unpartitioned space
+   l   list known partition types
+   n   add a new partition
+   p   print the partition table
+   t   change a partition type
+   v   verify the partition table
+   i   print information about a partition
+
+  Misc
+   m   print this menu
+   x   extra functionality (experts only)
+
+  Script
+   I   load disk layout from sfdisk script file
+   O   dump disk layout to sfdisk script file
+
+  Save &amp; Exit
+   w   write table to disk and exit
+   q   quit without saving changes
+
+  Create a new label
+   g   create a new empty GPT partition table
+   G   create a new empty SGI (IRIX) partition table
+   o   create a new empty MBR (DOS) partition table
+   s   create a new empty Sun partition table
+</code></pre>
+<p>输入 F 列出未分区的剩余空间：</p>
+<pre><code class="language-bash">Command (m for help): F
+
+Unpartitioned space /dev/nvme0n1: 65.76 GiB, 70610066944 bytes, 137910287 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+
+    Start       End   Sectors  Size
+838862848 976773134 137910287 65.8G
+</code></pre>
+<p>这个 65.8G 就是我们之前预留的空间。</p>
+<p>输入 n 添加新的分区，默认是利用剩余空间的全部。这里敲三次回车全部默认即可。</p>
+<pre><code class="language-bash">Command (m for help): n
+Partition number (4-128, default 4): 
+First sector (838860801-976773134, default 838862848): 
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (838862848-976773134, default 976773119): 
+
+Created a new partition 4 of type 'Linux filesystem' and of size 65.8 GiB.
+</code></pre>
+<p>如果不是利用全部剩余空间，则可以通过输入 <code>+100G</code> 这样的内容来设置要添加的分区大小。</p>
+<p>输入 p 显示修改之后的分区表：</p>
+<pre><code class="language-bash">Command (m for help): p
+Disk /dev/nvme0n1: 465.76 GiB, 500107862016 bytes, 976773168 sectors
+Disk model: WDC WDS500G1B0C-00S6U0                  
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 000372CE-8B4D-4B12-974B-99C231DB3D67
+
+Device             Start       End   Sectors  Size Type
+/dev/nvme0n1p1        34      2047      2014 1007K BIOS boot
+/dev/nvme0n1p2      2048   2099199   2097152    1G EFI System
+/dev/nvme0n1p3   2099200 838860800 836761601  399G Linux LVM
+/dev/nvme0n1p4 838862848 976773119 137910272 65.8G Linux filesystem
+</code></pre>
+<p>可以看到我们新加的 nvme0n1p4 分区大小为 65.8G。</p>
+<p>检查无误，输入 w 写入修改操作并退出。</p>
+<pre><code class="language-bash">Command (m for help): w
+The partition table has been altered.
+Syncing disks.
+</code></pre>
+<p>在 pve 下执行</p>
+<pre><code class="language-bash">fdisk -l 
+</code></pre>
+<p>再次检查分区情况：</p>
+<pre><code class="language-bash">......
+Device             Start       End   Sectors  Size Type
+/dev/nvme0n1p1        34      2047      2014 1007K BIOS boot
+/dev/nvme0n1p2      2048   2099199   2097152    1G EFI System
+/dev/nvme0n1p3   2099200 838860800 836761601  399G Linux LVM
+/dev/nvme0n1p4 838862848 976773119 137910272 65.8G Linux filesystem
+</code></pre>
+<p>至此 timeshift 分区准备OK.</p>
+<h3 id="格式化-timeshift-分区">格式化 timeshift 分区</h3>
+<pre><code class="language-bash">mkfs.ext4 /dev/nvme0n1p4
+</code></pre>
+<p>对分区进行格式化，格式为 ext4：</p>
+<pre><code class="language-bash">
+mke2fs 1.47.0 (5-Feb-2023)
+Discarding device blocks: done                            
+Creating filesystem with 17238784 4k blocks and 4317184 inodes
+Filesystem UUID: 2411eb4e-67f1-4c7d-b633-17df1fa0c127
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000, 7962624, 11239424
+
+Allocating group tables: done                            
+Writing inode tables: done                            
+Creating journal (131072 blocks): done
+Writing superblocks and filesystem accounting information: done 
+</code></pre>
+<h2 id="安装-timeshift">安装 timeshift</h2>
+<p>具体参考这里：</p>
+<p><a class="link" href="https://skyao.io/learning-ubuntu-server/docs/installation/timeshift/install/"  target="_blank" rel="noopener"
+    >https://skyao.io/learning-ubuntu-server/docs/installation/timeshift/install/</a></p>
+<p>安装配置完成后，执行</p>
+<pre><code class="language-bash">timeshift --list
+</code></pre>
+<p>查看 timeshift 情况：</p>
+<pre><code class="language-bash">
+First run mode (config file not found)
+Selected default snapshot type: RSYNC
+Mounted '/dev/nvme0n1p4' at '/run/timeshift/5364/backup'
+Device : /dev/nvme0n1p4
+UUID   : 2411eb4e-67f1-4c7d-b633-17df1fa0c127
+Path   : /run/timeshift/5364/backup
+Mode   : RSYNC
+Status : No snapshots on this device
+First snapshot requires: 0 B
+
+No snapshots found
+</code></pre>
+<h2 id="使用-timeshift-进行备份">使用 timeshift 进行备份</h2>
+<h3 id="设置自动备份">设置自动备份</h3>
+<pre><code class="language-bash">vi /etc/timeshift/timeshift.json
+</code></pre>
+<p>打开 timeshift 配置文件，修改以下内容</p>
+<pre><code class="language-yaml">{
+  &quot;schedule_monthly&quot; : &quot;true&quot;,
+  &quot;schedule_weekly&quot; : &quot;true&quot;,
+  &quot;schedule_daily&quot; : &quot;true&quot;,
+  &quot;schedule_hourly&quot; : &quot;false&quot;,
+  &quot;schedule_boot&quot; : &quot;false&quot;,
+  &quot;count_monthly&quot; : &quot;2&quot;,
+  &quot;count_weekly&quot; : &quot;3&quot;,
+  &quot;count_daily&quot; : &quot;5&quot;,
+  &quot;count_hourly&quot; : &quot;6&quot;,
+  &quot;count_boot&quot; : &quot;5&quot;,
+}
+
+</code></pre>
+<p>对于软路由机器，由于是长期开机并且改动不过，因此 schedule_monthly / schedule_weekly /  schedule_daily 设置为 true，数量用默认值。</p>
+<h3 id="排除不需要备份的内容">排除不需要备份的内容</h3>
+<p>默认情况下 timeshift 的配置文件中已经设置了 exclude：</p>
+<pre><code class="language-bash">{
+  &quot;exclude&quot; : [
+    &quot;/var/lib/ceph/**&quot;,
+    &quot;/root/**&quot;
+  ],
+  &quot;exclude-apps&quot; : []
+}
+
+</code></pre>
+<ul>
+<li>
+<p><code>/var/lib/ceph/</code>： ceph 相关的文件</p>
+</li>
+<li>
+<p><code>/root/</code>: root 用户的 home 路径，如果使用其他用户，也需要将它们的 home 目录加入进来。</p>
+</li>
+</ul>
+<p>但这些是不够的，还需要增加以下内容：</p>
+<ul>
+<li>
+<p><code>/var/lib/vz/</code></p>
+<p>pve的各种文件，包括虚拟机，模版，备份，上传的iso文件等都在这里，这些文件太大，不适合用 timeshift 备份，因此必须排除。</p>
+<pre><code class="language-bash">ls /var/lib/vz
+dump  images  private  snippets  template
+</code></pre>
+<ul>
+<li>dump： 这里保存 pve backup 备份下来的虚拟机镜像文件</li>
+<li>images： 这里保存 pve 虚拟机镜像文件</li>
+<li>template： iso 子目录中保存的是上传到 pve 的各种 iso/img 文件</li>
+</ul>
+</li>
+<li>
+<p><code>/etc/pve/qemu-server/</code>: pve 的虚拟机配置文件，这些文件也不要用 timeshift 备份，避免恢复时把虚拟机文件也给覆盖了。虚拟机文件的备份会由下一节中提到的自动脚本进行备份。</p>
+</li>
+<li>
+<p><code>/mnt/pve</code>: 在 pve 下使用 nfs 存储时，远程 nfs 会自动 mount 到这个目录下，这些文件肯定也不能被 timeshift 备份。因此必须排除。</p>
+</li>
+</ul>
+<p>最后通过设置的 exclude 为：</p>
+<pre><code class="language-bash">{
+  ......
+  &quot;exclude&quot; : [
+    &quot;/var/lib/ceph/**&quot;,
+    &quot;/root/**&quot;,
+    &quot;/var/lib/vz/**&quot;,
+    &quot;/etc/pve/qemu-server/**&quot;,
+    &quot;/mnt/pve/**&quot;
+  ],
+}
+</code></pre>
+<h3 id="设置自动备份虚拟机文件">设置自动备份虚拟机文件</h3>
+<p>见下一章，推荐完成这个操作之后再执行手工备份。</p>
+<h3 id="手工备份">手工备份</h3>
+<pre><code class="language-bash">timeshift --create --comments &quot;first backup after apt upgrade and basic soft install&quot;
+</code></pre>
+<p>输入为：</p>
+<pre><code class="language-bash">Estimating system size...
+Creating new snapshot...(RSYNC)
+Saving to device: /dev/nvme0n1p4, mounted at path: /run/timeshift/6888/backup
+Syncing files with rsync...
+Created control file: /run/timeshift/6888/backup/timeshift/snapshots/2023-07-25_21-10-04/info.json
+RSYNC Snapshot saved successfully (41s)
+Tagged snapshot '2023-07-25_21-10-04': ondemand
+------------------------------------------------------------------------------
+</code></pre>
+<p>查看当前备份情况：</p>
+<pre><code class="language-bash">timeshift --list                                                                      
+Mounted '/dev/nvme0n1p4' at '/run/timeshift/7219/backup'
+Device : /dev/nvme0n1p4
+UUID   : 2411eb4e-67f1-4c7d-b633-17df1fa0c127
+Path   : /run/timeshift/7219/backup
+Mode   : RSYNC
+Status : OK
+1 snapshots, 64.5 GB free
+
+Num     Name                 Tags  Description                                            
+------------------------------------------------------------------------------
+0    &gt;  2023-07-25_21-10-04  O     first backup after apt upgrade and basic soft install  
+</code></pre>
+<p>结合备份之前看到的 timeshift 备份分区的大小为 65.8G，减去这里的 64.5 GB free，也就是这个备份用掉了 1.3 G 的磁盘空间。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/pve/">PVE</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2024/rtl8125-driver/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【归档】PVE安装RTL8125驱动</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/pve-maxio1602/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【归档】PVE环境下硬盘识别问题</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/pve-recovery/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【归档】PVE进入Recovery模式恢复系统</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+<div  class="meta-item">&nbsp·&nbsp
+  <span id="busuanzi_container_page_pv">本文阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+</div>
+
+     
+        
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+
+
+</script>
+
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2024 <a href="https://stack-theme-mod.vercel.app/">TFL</a><i class="fas fa-bell"></i><br>
+      共书写了7.4k字·共 9篇文章</br><span><p>
+    </section>
+  
+      
+<div class="busuanzi-footer">
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+</div><section class="powerby">
+        
+            TFL's Personal Website | EXT-3.5.07 <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a><br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2024-07-07';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+
+
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="Type something..." />
+        
+            <button title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#为-timeshift-准备分区">为 timeshift 准备分区</a>
+      <ol>
+        <li><a href="#查看当前磁盘分区情况">查看当前磁盘分区情况</a></li>
+        <li><a href="#添加-timeshift-分区">添加 timeshift 分区</a></li>
+        <li><a href="#格式化-timeshift-分区">格式化 timeshift 分区</a></li>
+      </ol>
+    </li>
+    <li><a href="#安装-timeshift">安装 timeshift</a></li>
+    <li><a href="#使用-timeshift-进行备份">使用 timeshift 进行备份</a>
+      <ol>
+        <li><a href="#设置自动备份">设置自动备份</a></li>
+        <li><a href="#排除不需要备份的内容">排除不需要备份的内容</a></li>
+        <li><a href="#设置自动备份虚拟机文件">设置自动备份虚拟机文件</a></li>
+        <li><a href="#手工备份">手工备份</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+        
+            <section class="widget categories">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+  
+        </div> 
+        <h2 class="widget-title section-title">Categories</h2>
+    <div class="widget-categories--list">
+<div class="widget">
+    <h3 class="widget-title"> </h3>
+    <div class="widget-body">
+        <div class="category-list">
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/pve/" class="category-list-link">pve<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/system/" class="category-list-link">system<span class="category-list-count">1</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/%E5%BD%92%E6%A1%A3/" class="category-list-link">归档<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/%E6%95%99%E7%A8%8B/" class="category-list-link">教程<span class="category-list-count">8</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/%E9%93%BE%E6%8E%A5/" class="category-list-link">链接<span class="category-list-count">1</a>
+            </span></div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Archives</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2024">
+                        
+                            <span class="year">2024</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/pve/" class="font_size_6">
+                PVE
+            </a>
+        
+            <a href="/tags/system/" class="font_size_1">
+                System
+            </a>
+        
+            <a href="/tags/%E6%95%99%E7%A8%8B/" class="font_size_1">
+                教程
+            </a>
+        
+            <a href="/tags/%E9%93%BE%E6%8E%A5/" class="font_size_1">
+                链接
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

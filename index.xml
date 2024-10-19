@@ -1,98 +1,1636 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>改BUG的大橘</title>
-        <link>https://dev.tflasp.fun/</link>
-        <description>Recent content on 改BUG的大橘</description>
+        <title>TFL</title>
+        <link>https://tech.tflasp.fun/</link>
+        <description>Recent content on TFL</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 31 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.tflasp.fun/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>关于咱都知道些啥</title>
-        <link>https://dev.tflasp.fun/2024/pveinstall/</link>
-        <pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate>
+        <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.tflasp.fun/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Campux校墙使用指南</title>
+        <link>https://tech.tflasp.fun/2024/campux/</link>
+        <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://dev.tflasp.fun/2024/pveinstall/</guid>
-        <description>&lt;p&gt;唔，感觉有好多，就简单一一梳理一下吧，文章格式什么的可能就不怎么规范了，所以才放到&lt;code&gt;dev站&lt;/code&gt;上嘛。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;├─硬件
-│  ├─Arduino开发
-│  ├─BGA焊接
-│  ├─SSD
-│  │  ├─SSD原理
-│  │  │  ├─主控
-│  │  │  │  └─FTL表
-│  │  │  └─闪存
-│  │  │      ├─MLC
-│  │  │      ├─PLC
-│  │  │      ├─QLC
-│  │  │      ├─SLC
-│  │  │      └─TLC
-│  │  ├─SSD开卡
-│  │  ├─SSD维修
-│  │  └─手搓SSD
-│  ├─TSOP焊接
-│  ├─主机故障排除、解决
-│  │  ├─PC维护
-│  │  └─服务器运维
-│  ├─交换机
-│  │  └─console
-│  ├─显卡维修（理论）
-│  │  ├─1.8v
-│  │  ├─3.3v
-│  │  ├─5v
-│  │  └─PEX
-│  └─硬件搭配与组装
-│      ├─PC搭配选购
-│      └─服务器选购
-└─软件
-    ├─Linux
-    │  ├─CentOS
-    │  │  └─换源
-    │  ├─Linux_minit
-    │  ├─PVE
-    │  │  ├─换源
-    │  │  └─直通（iommu）
-    │  │      ├─ROMBAR
-    │  │      └─SATA CTRL
-    │  └─Ubuntu
-    │      ├─SSH
-    │      └─换源
-    ├─Windows
-    │  ├─WindowsSubsystem
-    │  │  ├─WSA
-    │  │  │  └─Powershell安装
-    │  │  └─WSL
-    │  ├─Windows优化
-    │  │  ├─control
-    │  │  ├─gpedit.msc
-    │  │  ├─hosts
-    │  │  ├─powershell
-    │  │  ├─regedit
-    │  │  ├─taskmgr
-    │  │  └─winver
-    │  ├─Windows安装方式
-    │  │  ├─Dism++释放镜像
-    │  │  ├─GHO还原
-    │  │  ├─WinNTSetup
-    │  │  ├─原版镜像安装
-    │  │  └─手动释放、添加引导
-    │  └─剪辑
-    │      ├─Ae
-    │      │  └─不会
-    │      ├─Au
-    │      │  └─会
-    │      ├─Pr
-    │      │  └─会一点
-    │      └─Ps
-    │          └─会一点
-    └─开发
-        ├─C++
-        │  └─Windows简单窗体应用
-        ├─Hugo
-        │  ├─docsy
-        │  └─stack
-        └─Python
+        <guid>https://tech.tflasp.fun/2024/campux/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;本文章&lt;strong&gt;持续更新&lt;/strong&gt;，有修改意见可以联系站长！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;校墙介绍&#34;&gt;校墙介绍&lt;/h2&gt;
+&lt;p&gt;待完善&lt;/p&gt;
+&lt;h2 id=&#34;使用指南&#34;&gt;使用指南&lt;/h2&gt;
+&lt;h3 id=&#34;观看校墙&#34;&gt;观看校墙&lt;/h3&gt;
+&lt;h4 id=&#34;添加jockerbot机器人&#34;&gt;添加JockerBot机器人&lt;/h4&gt;
+&lt;p&gt;打开 &lt;a class=&#34;link&#34; href=&#34;https://ti.qq.com/open_qq/index2.html?url=mqqapi%3a%2f%2fuserprofile%2ffriend_profile_card%3fsrc_type%3dweb%26version%3d1.0%26source%3d2%26uin%3d3959787128&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;机器人名片&lt;/a&gt;，请用&lt;strong&gt;QQ手机版&lt;/strong&gt;打开！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在JockerBot的QQ空间就是全部动态&lt;/strong&gt;!&lt;/p&gt;
+&lt;h3 id=&#34;上传至校墙&#34;&gt;上传至校墙&lt;/h3&gt;
+&lt;h4 id=&#34;注册账号&#34;&gt;注册账号&lt;/h4&gt;
+&lt;p&gt;投稿页面（请用&lt;strong&gt;手机流量&lt;/strong&gt;打开）：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 148; 
+			flex-basis: 356px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/campux/login.png&#34; data-size=&#34;743x500&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/campux/login.png&#34;
+			width=&#34;743&#34;
+			height=&#34;500&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/campux/login_hud5706795dca15018b6b19e83cdca83fd_15423_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/campux/login_hud5706795dca15018b6b19e83cdca83fd_15423_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;首次进入，先注册账号&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;首次进入，先注册账号&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;私信&lt;code&gt;JockerBot&lt;/code&gt;以下内容&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;#注册账号&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;JockerBot&lt;/code&gt;将会回复一个默认密码&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 186; 
+			flex-basis: 447px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/campux/pwd.png&#34; data-size=&#34;220x118&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/campux/pwd.png&#34;
+			width=&#34;220&#34;
+			height=&#34;118&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/campux/pwd_hua5926c564f3ac3db65f41db50bdab6f9_6070_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/campux/pwd_hua5926c564f3ac3db65f41db50bdab6f9_6070_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;登录并投稿&#34;&gt;登录并投稿&lt;/h4&gt;
+&lt;p&gt;打开校墙投稿网址（仅限IPv6，手机流量访问）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;主链接&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;http://jokerbot.sarkis.icu:8081/#/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;jokerbot.sarkis.icu&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;备用链接&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;http://bot.tflasp.fun:8081/#/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;bot.tflasp.fun&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;接下来用你的QQ号和刚刚得到的密码进行登录。&lt;/p&gt;
+&lt;p&gt;登陆后即可在主界面投稿，审核完成后将会展示在校墙上！&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 92; 
+			flex-basis: 221px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/campux/upload.png&#34; data-size=&#34;475x514&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/campux/upload.png&#34;
+			width=&#34;475&#34;
+			height=&#34;514&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/campux/upload_hu60e4fba6ef8847263dbd2deb47e243fb_46177_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/campux/upload_hu60e4fba6ef8847263dbd2deb47e243fb_46177_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;在主界面投稿&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;在主界面投稿&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>【教程】保障数据安全，关闭Bitlocker</title>
+        <link>https://tech.tflasp.fun/2024/disable-bitlocker/</link>
+        <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://tech.tflasp.fun/2024/disable-bitlocker/</guid>
+        <description>&lt;img src="https://tech.tflasp.fun/2024/disable-bitlocker/slug.png" alt="Featured image of post 【教程】保障数据安全，关闭Bitlocker" /&gt;&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;近期有几个朋友笔记本硬盘坏了，拿去恢复数据，硬件层面的问题解决后发现硬盘有BitLocker加密，而他全然不知道此事，微软账号里也没有备份，所以数据也就无法找回了。这也是我写这篇文章的原因之一。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;BitLocker 是一项 Windows 安全功能，可为整个卷提供加密，解决因设备丢失、被盗或不适当停用而导致数据被盗或泄露的威胁。但是，&lt;strong&gt;在2020年后的新笔记本电脑一般已开启Bitlocker功能（即硬盘中数据已被加密）&lt;/strong&gt;，若计算机硬件有改变或损坏，重新进入已加密的系统会要求输入“恢复密钥”，如下图。&lt;strong&gt;若密钥丢失，则加密分区中的数据全部丢失！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果的确担心数据安全或有重要数据，请&lt;strong&gt;及时备份密钥&lt;/strong&gt;（或使用其他加密软件，如：&lt;code&gt;VeraCrypt&lt;/code&gt;），或者按照公司要求保存在指定驱动器里！&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 222; 
+			flex-basis: 533px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/recovery.png&#34; data-size=&#34;676x304&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/recovery.png&#34;
+			width=&#34;676&#34;
+			height=&#34;304&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/recovery_hu5c1f7f68b6da2f524f10fc57c5d65e43_137490_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/disable-bitlocker/recovery_hu5c1f7f68b6da2f524f10fc57c5d65e43_137490_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;Bitlocker恢复界面（将会在开机时显示）&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;Bitlocker恢复界面（将会在开机时显示）&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;原理&#34;&gt;原理&lt;/h2&gt;
+&lt;p&gt;若对原理不感兴趣可以 &lt;a class=&#34;link&#34; href=&#34;&#34; &gt;往下翻&lt;/a&gt; 或 &lt;a class=&#34;link&#34; href=&#34;&#34; &gt;单击右侧目录栏跳转至“&lt;strong&gt;解密方法&lt;/strong&gt;”&lt;/a&gt; 以查看解密步骤！&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 127; 
+			flex-basis: 306px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/bitlocker.png&#34; data-size=&#34;669x524&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/bitlocker.png&#34;
+			width=&#34;669&#34;
+			height=&#34;524&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/bitlocker_hu351eb91ec3bf236eb95b8deb32d48588_314421_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/disable-bitlocker/bitlocker_hu351eb91ec3bf236eb95b8deb32d48588_314421_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;Bitlocker使用TPM解密 原理图（图源：MSDN）&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;Bitlocker使用TPM解密 原理图（图源：MSDN）&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图解：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;BIOS 启动并初始化TPM。并measure firmware部分敏感内容和启动分区以及bootloader，将结果放入PCR组。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;2.如果 PCR 值与期望值相匹配，则 TPM 将使用存储根密钥 (SRK) 对卷主密钥 (VMK) 进行解密。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;从卷中读取加密 FVEK，并使用解密 VMK 对其进行解密。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;访问磁盘扇区时，使用 FVEK 进行解密。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为应用程序和过程提供解密数据。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其中SRK存储在TPM芯片中，它是整个过程的信任根。BitLocker通过检测PCR组，对主启动记录 (MBR) 代码、NTFS 启动扇区、NTFS 启动块、启动管理器和其他重要组件进行检查，如果被更改，则第2步将出错，要求输入recovery PIN值。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;详细原理请跳转至Microsoft官方文档：&lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Microsoft Learn: BitLocker overview&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;触发条件&#34;&gt;触发条件&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1，更换主板（100%触发，把硬盘拆下做成移动硬盘也在此列）
+
+2，修改高级启动设置（高概率）
+
+3，同一台电脑上存在两个以上的系统盘或引导（高概率，PE应该也在此列）
+
+4，更换CPU/内存/显卡/网卡/加装硬盘（低概率）
+
+5，更新BIOS（低概率）
+
+6，Win10更新时崩溃卡死（低概率）
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;未完待续&#34;&gt;未完待续&lt;/h2&gt;
+&lt;h2 id=&#34;解密方法-windows1011通用&#34;&gt;解密方法 (Windows10/11通用)&lt;/h2&gt;
+&lt;p&gt;以下内容涉及图片较多，建议打开Github加速器查看。&lt;/p&gt;
+&lt;h3 id=&#34;辨别当前磁盘状态&#34;&gt;辨别当前磁盘状态&lt;/h3&gt;
+&lt;h4 id=&#34;case-1-无需解密&#34;&gt;Case 1 （无需解密）&lt;/h4&gt;
+&lt;p&gt;打开“此电脑”，若磁盘图标同下，则磁盘未被加密，无需进行任何操作！！&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 1088; 
+			flex-basis: 2612px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/status1.png&#34; data-size=&#34;762x70&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/status1.png&#34;
+			width=&#34;762&#34;
+			height=&#34;70&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/status1_hu19fa987ca6fc814523aff5dbee594014_5893_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/disable-bitlocker/status1_hu19fa987ca6fc814523aff5dbee594014_5893_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;磁盘上无任何标记，未被加密&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;磁盘上无任何标记，未被加密&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;case-2-需要解密&#34;&gt;Case 2 （需要解密）&lt;/h4&gt;
+&lt;p&gt;磁盘上有带锁图标且存在感叹号，该磁盘已被加密，但还缺失连接账户的步骤！普通用户建议直接解密。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 362; 
+			flex-basis: 870px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/status2.png&#34; data-size=&#34;254x70&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/status2.png&#34;
+			width=&#34;254&#34;
+			height=&#34;70&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/status2_hu0bd0f26ae9bd93285e3f90a2fecb25c0_15574_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/disable-bitlocker/status2_hu0bd0f26ae9bd93285e3f90a2fecb25c0_15574_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;磁盘上有带锁图标且存在感叹号，该磁盘已被加密，但还缺失连接账户的步骤&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;磁盘上有带锁图标且存在感叹号，该磁盘已被加密，但还缺失连接账户的步骤&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;case-3-需要解密&#34;&gt;Case 3 （需要解密）&lt;/h4&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 390; 
+			flex-basis: 937px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/status3.png&#34; data-size=&#34;254x65&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/status3.png&#34;
+			width=&#34;254&#34;
+			height=&#34;65&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/status3_huc3b3d67649efda639b360f81b75aa60f_8483_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/disable-bitlocker/status3_huc3b3d67649efda639b360f81b75aa60f_8483_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;磁盘上出现打开的锁，该磁盘已被完全加密&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;磁盘上出现打开的锁，该磁盘已被完全加密&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;解密步骤请务必判断自身磁盘状态后进行操作&#34;&gt;解密步骤（请务必判断自身磁盘状态后进行操作）&lt;/h3&gt;
+&lt;p&gt;同时按Windows徽标键+R 调出 运行，并输入control，回车&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 181; 
+			flex-basis: 434px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/step1.png&#34; data-size=&#34;395x218&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/step1.png&#34;
+			width=&#34;395&#34;
+			height=&#34;218&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/step1_hu1ad58a6de2d5dce3a768a2028ff668c4_42263_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/disable-bitlocker/step1_hu1ad58a6de2d5dce3a768a2028ff668c4_42263_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;同时按Windows徽标键&amp;#43;R 调出 运行，并输入control，回车&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;同时按Windows徽标键+R 调出 运行，并输入control，回车&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;将查看方式改为“小图标”&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 179; 
+			flex-basis: 430px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/step2.png&#34; data-size=&#34;1109x618&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/step2.png&#34;
+			width=&#34;1109&#34;
+			height=&#34;618&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/step2_hud75ad39012b4948563eaa812025e936e_246769_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/disable-bitlocker/step2_hud75ad39012b4948563eaa812025e936e_246769_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;将查看方式改为“小图标”&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;将查看方式改为“小图标”&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;单击“Bitlocker驱动器加密”&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 223; 
+			flex-basis: 536px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/step3.png&#34; data-size=&#34;1126x504&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/step3.png&#34;
+			width=&#34;1126&#34;
+			height=&#34;504&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/step3_hua87df2787f3a286621259056406910b0_221800_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/disable-bitlocker/step3_hua87df2787f3a286621259056406910b0_221800_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;单击“Bitlocker驱动器加密”&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;单击“Bitlocker驱动器加密”&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;选择要解密的驱动器，单击“关闭BitLocker，并授予权限&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 115; 
+			flex-basis: 276px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/step4.png&#34; data-size=&#34;612x532&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/step4.png&#34;
+			width=&#34;612&#34;
+			height=&#34;532&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/step4_hu7b09272d50ebb46126ef10c50b65985d_163230_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/disable-bitlocker/step4_hu7b09272d50ebb46126ef10c50b65985d_163230_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;选择要解密的驱动器，单击“关闭BitLocker”，并授予权限&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;选择要解密的驱动器，单击“关闭BitLocker”，并授予权限&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;注意：解密过程会消耗一段时间，根据磁盘性能和磁盘内已有文件大小相关，解密时可正常使用电脑，期间可以关机，但是异常断电会导致数据丢失！！！
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;若需输入恢复密钥，可在微软账户里寻找到密钥，&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://account.microsoft.com/devices/recoverykey?refd=account.microsoft.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;微软官网&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 244; 
+			flex-basis: 587px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/key.png&#34; data-size=&#34;1232x503&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/key.png&#34;
+			width=&#34;1232&#34;
+			height=&#34;503&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/disable-bitlocker/key_hu3cb8847aa3b1670fecacda07b21d02d2_244148_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/disable-bitlocker/key_hu3cb8847aa3b1670fecacda07b21d02d2_244148_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;密钥示例&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;密钥示例&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;将密钥ID与设备上的密钥ID匹配后，输入正确的恢复密钥即可解密。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;[1] &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/en-us/windows/security/hardware-security/tpm/tpm-fundamentals&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Microsoft Learn/Windows/Security &lt;strong&gt;TPM fundamentals&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Microsoft Learn/Windows/Security &lt;strong&gt;BitLocker countermeasures&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] &lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/29840740&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Bitlocker、TPM和系统安全&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>工具包分享</title>
+        <link>https://tech.tflasp.fun/2024/links/</link>
+        <pubDate>Fri, 23 Aug 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://tech.tflasp.fun/2024/links/</guid>
+        <description>&lt;p&gt;下载时记得关闭杀毒软件，若被误杀请重新下载。&lt;/p&gt;
+&lt;p&gt;资料由站长收集整理，仅供学习交流，&lt;strong&gt;严禁用于商业用途&lt;/strong&gt;，请于24小时内删除。&lt;/p&gt;
+&lt;h2 id=&#34;系统优化工具&#34;&gt;系统优化工具&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Password&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/igQrO22q417i&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows10永久数字激活工具&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/i6BiS22q40lg&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Geek Uninstaller卸载工具&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://xiaoming.lanzoui.com/iJandtz7gyb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows Defender Blocker&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;解压密码：sordum&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/i2qby28ae30d&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows Update Blocker&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iF68p28aegta&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows 11 轻松设置&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iFSYI22q3znc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ExecTI提权工具&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;9ywa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/ipR3O22q3zmb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Everything&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iagCl22q3z5e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;DragonKMS Activator&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iTLs122q3xuh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AIDA64&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/i20JY287s15c&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FastCopy&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iKaAW287sn9i&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RaiDrive2020.11.30&lt;/a&gt; &lt;code&gt;Old version&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;faqd&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/i9WcZ287t4qh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;TotalCMD&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;h65b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/it4Fm28ae2re&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;qBittorrent&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iJow628ae9uj&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AS SSD Benchmark&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;9uzk&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/i0ApO28aenqj&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CrystalDiskInfo&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/i5Mpx28cf4qd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Intel CAS(Cache Acceleration Software)&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;c276&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/ink6t28jfl3e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BoardViewer点位图查看&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;系统安装工具&#34;&gt;系统安装工具&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Password&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iDcOn22q3z0j&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Dism++&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/i3vsK22q3yud&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;DiskGeniusPRO&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/i72bm24j105c&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Rufus&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;5k8t&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iMhPd287sjwh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EasyUEFI&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;4bva&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iRvSS28adxqd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BOOTICE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iK90S28aeccj&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RAMOS&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iVtID28aedra&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;WinNTSetup&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iLriB28aefgb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MBR recovery&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1bz8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/it3l328llona&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BIOSBackupTool&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;64u3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iyr2Y28lluyh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MMTool&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;2up8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/irZhR28lm3jg&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EFI Shell 刷写BIOS&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;其他工具&#34;&gt;其他工具&lt;/h2&gt;
+&lt;h3 id=&#34;量产工具&#34;&gt;量产工具&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Password&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/izpys28jfb2d&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ChipGenius4.21.0701&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/i3A9j28jfdoh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;TRANSCEND-SM32X-PV1.3.08-U1207&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;aph6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iGARJ28jfh4b&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SM2258XT_Sandisk_BiCS4_T0910A0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;43pf&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/ibEEV29yq18b&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SM2258XT(AD)_B16A_PKGV0608A_FWV0328A0 Beta&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/i8P2i29yqrwb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SM2258XT东芝BiCS4颗粒（T0910A0固件）【8Die】&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwz.lanzoul.com/iZKVY29yricd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;TRANSCEND-SM32X-PV1.3.08-BY-USBDEV-U1207&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+        <item>
+        <title>【归档】Proxmox VE更新CPU微码</title>
+        <link>https://tech.tflasp.fun/2024/microcode/</link>
+        <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://tech.tflasp.fun/2024/microcode/</guid>
+        <description>&lt;h2 id=&#34;问题重现&#34;&gt;问题重现&lt;/h2&gt;
+&lt;p&gt;PVE 启动时，看到屏幕上有提示要求更新 microcode。&lt;/p&gt;
+&lt;h2 id=&#34;添加仓库&#34;&gt;添加仓库&lt;/h2&gt;
+&lt;p&gt;需要添加 unstable repo：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;echo &amp;quot;deb http://deb.debian.org/debian/ unstable non-free-firmware&amp;quot; &amp;gt; /etc/apt/sources.list.d/debian-unstable.list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;执行更新：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt update &amp;amp;&amp;amp; apt list --upgradable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装微码，intel 选择：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt -y install intel-microcode
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;amd 选择：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt -y install amd64-microcode
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更新完之后重启，发现之前报告要求更新 microcode 的信息消失了，搞定。&lt;/p&gt;
+&lt;p&gt;记得把 unstable 仓库删除，避免不小心更新到这个仓库中的其他软件。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;rm /etc/apt/sources.list.d/debian-unstable.list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;引发问题&#34;&gt;引发问题&lt;/h2&gt;
+&lt;p&gt;安装上面的方式安装微码之后，即使注释或者删除 debian-unstable.list 文件，在 apt update 时也会出现以下提示：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ apt update
+Hit:1 https://mirrors.ustc.edu.cn/debian bookworm InRelease
+Hit:2 https://mirrors.tuna.tsinghua.edu.cn/proxmox/debian bookworm InRelease
+Hit:3 https://mirrors.ustc.edu.cn/debian bookworm-updates InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+All packages are up to date.
+N: Repository &#39;Debian bookworm&#39; changed its &#39;firmware component&#39; value from &#39;non-free&#39; to &#39;non-free-firmware&#39;
+N: More information about this can be found online in the Release notes at: https://www.debian.org/releases/bookworm/amd64/release-notes/ch-information.html#non-free-split
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果不想继续看到这个提示，可以修改文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;vi /etc/apt/apt.conf.d/no-bookworm-firmware.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输入内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;APT::Get::Update::SourceListWarnings::NonFreeFirmware &amp;quot;false&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;再次执行 apt update 命令就不会再出现这个提示了：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ apt update
+Hit:1 https://mirrors.ustc.edu.cn/debian bookworm InRelease
+Hit:2 https://mirrors.ustc.edu.cn/debian bookworm-updates InRelease
+Hit:3 https://mirrors.tuna.tsinghua.edu.cn/proxmox/debian bookworm InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+All packages are up to date.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyrusyip.org/en/post/2023/01/31/install-microcode-on-proxmox/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;How to Install the Latest Microcode on Proxmox VE (Debian stable)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>【归档】PVE安装RTL8125驱动</title>
+        <link>https://tech.tflasp.fun/2024/rtl8125-driver/</link>
+        <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://tech.tflasp.fun/2024/rtl8125-driver/</guid>
+        <description>&lt;h2 id=&#34;问题重现&#34;&gt;问题重现&lt;/h2&gt;
+&lt;p&gt;发现更新驱动之后，普通模式下可以正常工作，但一旦开启直通，这个驱动就会无法工作。&lt;/p&gt;
+&lt;p&gt;而因为 RTL8139 被加入黑名单，导致没有驱动可用，然后网卡就无法使用。&lt;/p&gt;
+&lt;p&gt;因为这个网卡是用于管理网络的，所以 PVE 也跟着失联了&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;因此，放弃更新这个驱动。后续移除了所有的 2.5G 网卡，统一使用 cx3 pro 40g （hp544+）或者 cx4 25g 网卡。&lt;/p&gt;
+&lt;h2 id=&#34;准备工作&#34;&gt;准备工作&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt install -y dkms
+apt install -y pve-headers-$(uname -r)
+apt install --fix-broken
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;下载驱动&#34;&gt;下载驱动&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/awesometic/realtek-r8125-dkms/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/awesometic/realtek-r8125-dkms/releases&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir ~/temp
+cd ~/temp
+wget https://github.com/awesometic/realtek-r8125-dkms/releases/download/9.010.01-2/realtek-r8125-dkms_9.010.01-2_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;通过安装包安装驱动&#34;&gt;&lt;del&gt;通过安装包安装驱动&lt;/del&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;dpkg -i realtek-r8125-dkms_9.010.01-2_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输出为：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;dpkg -i realtek-r8125-dkms_9.010.01-2_amd64.deb
+Selecting previously unselected package realtek-r8125-dkms.
+(Reading database ... 86910 files and directories currently installed.)
+Preparing to unpack realtek-r8125-dkms_9.010.01-2_amd64.deb ...
+Unpacking realtek-r8125-dkms (9.010.01-2) ...
+Setting up realtek-r8125-dkms (9.010.01-2) ...
+locale: Cannot set LC_ALL to default locale: No such file or directory
+Loading new realtek-r8125-9.010.01 DKMS files...
+Deprecated feature: REMAKE_INITRD (/usr/src/realtek-r8125-9.010.01/dkms.conf)
+Building for 6.2.16-4-pve
+Building for architecture amd64
+Building initial module for 6.2.16-4-pve
+Deprecated feature: REMAKE_INITRD (/var/lib/dkms/realtek-r8125/9.010.01/source/dkms.conf)
+Done.
+Deprecated feature: REMAKE_INITRD (/var/lib/dkms/realtek-r8125/9.010.01/source/dkms.conf)
+Deprecated feature: REMAKE_INITRD (/var/lib/dkms/realtek-r8125/9.010.01/source/dkms.conf)
+
+r8125.ko:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/6.2.16-4-pve/updates/dkms/
+depmod...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个版本是 9.010。&lt;/p&gt;
+&lt;h2 id=&#34;通过源码安装驱动&#34;&gt;通过源码安装驱动&lt;/h2&gt;
+&lt;p&gt;发现代码里面有更新到 9.011，只是没有打包发布为 deb 格式。但是可以从源码开始安装。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://github.com/awesometic/realtek-r8125-dkms.git 
+cd realtek-r8125-dkms
+./dkms-install.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输出为：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./dkms-install.sh 
+About to run dkms install steps...
+Deprecated feature: REMAKE_INITRD (/usr/src/r8125-9.011.01/dkms.conf)
+Creating symlink /var/lib/dkms/r8125/9.011.01/source -&amp;gt; /usr/src/r8125-9.011.01
+Sign command: /lib/modules/6.2.16-4-pve/build/scripts/sign-file
+Signing key: /var/lib/dkms/mok.key
+Public certificate (MOK): /var/lib/dkms/mok.pub
+Deprecated feature: REMAKE_INITRD (/var/lib/dkms/r8125/9.011.01/source/dkms.conf)
+
+Building module:
+Cleaning build area...
+&#39;make&#39; -j16 KVER=6.2.16-4-pve BSRC=/lib/modules/6.2.16-4-pve modules......
+Signing module /var/lib/dkms/r8125/9.011.01/build/src/r8125.ko
+Cleaning build area...
+Deprecated feature: REMAKE_INITRD (/var/lib/dkms/r8125/9.011.01/source/dkms.conf)
+
+r8125.ko:
+Running module version sanity check.
+ - Original module
+ - Installation
+   - Installing to /lib/modules/6.2.16-4-pve/updates/dkms/
+depmod...
+Finished running dkms install steps.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;更换驱动&#34;&gt;更换驱动&lt;/h2&gt;
+&lt;p&gt;屏蔽 R8169 驱动：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo sh -c &#39;echo blacklist r8169 &amp;gt;&amp;gt; /etc/modprobe.d/blacklist_r8169.conf&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启机器，检验：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;lsmod | grep r81  
+r8125                 262144  0
+r8169                 114688  0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;对比没有更新驱动的输出：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;lsmod | grep r81  
+r8169                 114688  0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;检验&#34;&gt;检验&lt;/h2&gt;
+&lt;p&gt;更新之前，客户端和服务器端都使用默认的 r8169 驱动，iperf3 测试速度为 2.35-2.36G。&lt;/p&gt;
+&lt;p&gt;更新客户端驱动为  r8125 驱动, iperf3 测试速度为 2.35-2.36 G，几乎没有变化。&lt;/p&gt;
+&lt;p&gt;继续更新服务器端驱动为  r8125 驱动, iperf3 测试速度为 2.35/2.36G，几乎没有变化。&lt;/p&gt;
+&lt;p&gt;总结：&lt;strong&gt;更新驱动未能带来速度方面的直接收益&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/577161166&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://zhuanlan.zhihu.com/p/577161166&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;amp;tid=7446026&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=7446026&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/awesometic/realtek-r8125-dkms&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/awesometic/realtek-r8125-dkms&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>【归档】PVE安装配置timeshift</title>
+        <link>https://tech.tflasp.fun/2024/timeshift/</link>
+        <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://tech.tflasp.fun/2024/timeshift/</guid>
+        <description>&lt;p&gt;前面在安装 PVE 时，选择了留出 50G 大小的空间给 timeshift 使用。&lt;/p&gt;
+&lt;h2 id=&#34;为-timeshift-准备分区&#34;&gt;为 timeshift 准备分区&lt;/h2&gt;
+&lt;h3 id=&#34;查看当前磁盘分区情况&#34;&gt;查看当前磁盘分区情况&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;fdisk -l
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看当前硬盘情况：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Disk /dev/nvme0n1: 465.76 GiB, 500107862016 bytes, 976773168 sectors
+Disk model: WDC WDS500G1B0C-00S6U0                  
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 000372CE-8B4D-4B12-974B-99C231DB3D67
+
+Device           Start       End   Sectors  Size Type
+/dev/nvme0n1p1      34      2047      2014 1007K BIOS boot
+/dev/nvme0n1p2    2048   2099199   2097152    1G EFI System
+/dev/nvme0n1p3 2099200 838860800 836761601  399G Linux LVM
+
+
+Disk /dev/mapper/pve-swap: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/pve-root: 96 GiB, 103079215104 bytes, 201326592 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这是一个大小为 480G 的 nvme SSD 硬盘，实际可用空间为 465G。在安装 PVE 时我将 hdsize 设置为 400G, 因此 PVE 使用的空间只有400G。从上面输出可以看到：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;/dev/nvme0n1p1      34      2047      2014 1007K BIOS boot
+/dev/nvme0n1p2    2048   2099199   2097152    1G EFI System
+/dev/nvme0n1p3 2099200 838860800 836761601  399G Linux LVM
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;nvme0n1p1 是 BIOS， nvme0n1p2 是 EFI 分区，PVE 使用的是 nvme0n1p3，399G。&lt;/p&gt;
+&lt;p&gt;另外可以看到：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Disk /dev/mapper/pve-swap: 8 GiB, 8589934592 bytes, 16777216 sectors
+Disk /dev/mapper/pve-root: 96 GiB, 103079215104 bytes, 201326592 sectors
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;swap 使用了 8G， pve root 使用了 96 G。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;lsblk -f
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以看到 nvme0n1p3 是一个 LVM2，400G 的总空间中，内部被分为 pve-swap / pve-root / pve-data_tmeta&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;
+NAME               FSTYPE      FSVER    LABEL UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
+nvme0n1                                                                                             
+|-nvme0n1p1                                                                                         
+|-nvme0n1p2        vfat        FAT32          26F2-091E                              1021.6M     0% /boot/efi
+`-nvme0n1p3        LVM2_member LVM2 001       foXyBZ-IPQT-wOCF-DWSN-u88a-sBVD-LaZ9zn                
+  |-pve-swap       swap        1              c5d97cb5-4d18-4f43-a36f-fb67eb8dcc84                  [SWAP]
+  |-pve-root       ext4        1.0            a0a46add-dda5-42b4-a978-97d363eeddd0     85.2G     4% /
+  |-pve-data_tmeta                                                                                  
+  | `-pve-data                                                                                      
+  `-pve-data_tdata                                                                                  
+    `-pve-data   
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;剩余的大约 60G 的空间在这里没有显示。&lt;/p&gt;
+&lt;h3 id=&#34;添加-timeshift-分区&#34;&gt;添加 timeshift 分区&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;fdisk /dev/nvme0n1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输出为：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Welcome to fdisk (util-linux 2.38.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+This disk is currently in use - repartitioning is probably a bad idea.
+It&#39;s recommended to umount all file systems, and swapoff all swap
+partitions on this disk.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在警告说磁盘使用中，重新分区不是一个好注意。不过我们是操作剩余空间，比较安全。&lt;/p&gt;
+&lt;p&gt;输入 m 获得帮助：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Command (m for help): m
+
+Help:
+
+  GPT
+   M   enter protective/hybrid MBR
+
+  Generic
+   d   delete a partition
+   F   list free unpartitioned space
+   l   list known partition types
+   n   add a new partition
+   p   print the partition table
+   t   change a partition type
+   v   verify the partition table
+   i   print information about a partition
+
+  Misc
+   m   print this menu
+   x   extra functionality (experts only)
+
+  Script
+   I   load disk layout from sfdisk script file
+   O   dump disk layout to sfdisk script file
+
+  Save &amp;amp; Exit
+   w   write table to disk and exit
+   q   quit without saving changes
+
+  Create a new label
+   g   create a new empty GPT partition table
+   G   create a new empty SGI (IRIX) partition table
+   o   create a new empty MBR (DOS) partition table
+   s   create a new empty Sun partition table
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输入 F 列出未分区的剩余空间：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Command (m for help): F
+
+Unpartitioned space /dev/nvme0n1: 65.76 GiB, 70610066944 bytes, 137910287 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+
+    Start       End   Sectors  Size
+838862848 976773134 137910287 65.8G
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个 65.8G 就是我们之前预留的空间。&lt;/p&gt;
+&lt;p&gt;输入 n 添加新的分区，默认是利用剩余空间的全部。这里敲三次回车全部默认即可。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Command (m for help): n
+Partition number (4-128, default 4): 
+First sector (838860801-976773134, default 838862848): 
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (838862848-976773134, default 976773119): 
+
+Created a new partition 4 of type &#39;Linux filesystem&#39; and of size 65.8 GiB.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果不是利用全部剩余空间，则可以通过输入 &lt;code&gt;+100G&lt;/code&gt; 这样的内容来设置要添加的分区大小。&lt;/p&gt;
+&lt;p&gt;输入 p 显示修改之后的分区表：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Command (m for help): p
+Disk /dev/nvme0n1: 465.76 GiB, 500107862016 bytes, 976773168 sectors
+Disk model: WDC WDS500G1B0C-00S6U0                  
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 000372CE-8B4D-4B12-974B-99C231DB3D67
+
+Device             Start       End   Sectors  Size Type
+/dev/nvme0n1p1        34      2047      2014 1007K BIOS boot
+/dev/nvme0n1p2      2048   2099199   2097152    1G EFI System
+/dev/nvme0n1p3   2099200 838860800 836761601  399G Linux LVM
+/dev/nvme0n1p4 838862848 976773119 137910272 65.8G Linux filesystem
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以看到我们新加的 nvme0n1p4 分区大小为 65.8G。&lt;/p&gt;
+&lt;p&gt;检查无误，输入 w 写入修改操作并退出。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Command (m for help): w
+The partition table has been altered.
+Syncing disks.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 pve 下执行&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;fdisk -l 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;再次检查分区情况：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;......
+Device             Start       End   Sectors  Size Type
+/dev/nvme0n1p1        34      2047      2014 1007K BIOS boot
+/dev/nvme0n1p2      2048   2099199   2097152    1G EFI System
+/dev/nvme0n1p3   2099200 838860800 836761601  399G Linux LVM
+/dev/nvme0n1p4 838862848 976773119 137910272 65.8G Linux filesystem
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此 timeshift 分区准备OK.&lt;/p&gt;
+&lt;h3 id=&#34;格式化-timeshift-分区&#34;&gt;格式化 timeshift 分区&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkfs.ext4 /dev/nvme0n1p4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;对分区进行格式化，格式为 ext4：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;
+mke2fs 1.47.0 (5-Feb-2023)
+Discarding device blocks: done                            
+Creating filesystem with 17238784 4k blocks and 4317184 inodes
+Filesystem UUID: 2411eb4e-67f1-4c7d-b633-17df1fa0c127
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000, 7962624, 11239424
+
+Allocating group tables: done                            
+Writing inode tables: done                            
+Creating journal (131072 blocks): done
+Writing superblocks and filesystem accounting information: done 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装-timeshift&#34;&gt;安装 timeshift&lt;/h2&gt;
+&lt;p&gt;具体参考这里：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://skyao.io/learning-ubuntu-server/docs/installation/timeshift/install/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://skyao.io/learning-ubuntu-server/docs/installation/timeshift/install/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装配置完成后，执行&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;timeshift --list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看 timeshift 情况：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;
+First run mode (config file not found)
+Selected default snapshot type: RSYNC
+Mounted &#39;/dev/nvme0n1p4&#39; at &#39;/run/timeshift/5364/backup&#39;
+Device : /dev/nvme0n1p4
+UUID   : 2411eb4e-67f1-4c7d-b633-17df1fa0c127
+Path   : /run/timeshift/5364/backup
+Mode   : RSYNC
+Status : No snapshots on this device
+First snapshot requires: 0 B
+
+No snapshots found
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;使用-timeshift-进行备份&#34;&gt;使用 timeshift 进行备份&lt;/h2&gt;
+&lt;h3 id=&#34;设置自动备份&#34;&gt;设置自动备份&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;vi /etc/timeshift/timeshift.json
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开 timeshift 配置文件，修改以下内容&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;{
+  &amp;quot;schedule_monthly&amp;quot; : &amp;quot;true&amp;quot;,
+  &amp;quot;schedule_weekly&amp;quot; : &amp;quot;true&amp;quot;,
+  &amp;quot;schedule_daily&amp;quot; : &amp;quot;true&amp;quot;,
+  &amp;quot;schedule_hourly&amp;quot; : &amp;quot;false&amp;quot;,
+  &amp;quot;schedule_boot&amp;quot; : &amp;quot;false&amp;quot;,
+  &amp;quot;count_monthly&amp;quot; : &amp;quot;2&amp;quot;,
+  &amp;quot;count_weekly&amp;quot; : &amp;quot;3&amp;quot;,
+  &amp;quot;count_daily&amp;quot; : &amp;quot;5&amp;quot;,
+  &amp;quot;count_hourly&amp;quot; : &amp;quot;6&amp;quot;,
+  &amp;quot;count_boot&amp;quot; : &amp;quot;5&amp;quot;,
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;对于软路由机器，由于是长期开机并且改动不过，因此 schedule_monthly / schedule_weekly /  schedule_daily 设置为 true，数量用默认值。&lt;/p&gt;
+&lt;h3 id=&#34;排除不需要备份的内容&#34;&gt;排除不需要备份的内容&lt;/h3&gt;
+&lt;p&gt;默认情况下 timeshift 的配置文件中已经设置了 exclude：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;{
+  &amp;quot;exclude&amp;quot; : [
+    &amp;quot;/var/lib/ceph/**&amp;quot;,
+    &amp;quot;/root/**&amp;quot;
+  ],
+  &amp;quot;exclude-apps&amp;quot; : []
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;/var/lib/ceph/&lt;/code&gt;： ceph 相关的文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;/root/&lt;/code&gt;: root 用户的 home 路径，如果使用其他用户，也需要将它们的 home 目录加入进来。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但这些是不够的，还需要增加以下内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;/var/lib/vz/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;pve的各种文件，包括虚拟机，模版，备份，上传的iso文件等都在这里，这些文件太大，不适合用 timeshift 备份，因此必须排除。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /var/lib/vz
+dump  images  private  snippets  template
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;dump： 这里保存 pve backup 备份下来的虚拟机镜像文件&lt;/li&gt;
+&lt;li&gt;images： 这里保存 pve 虚拟机镜像文件&lt;/li&gt;
+&lt;li&gt;template： iso 子目录中保存的是上传到 pve 的各种 iso/img 文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;/etc/pve/qemu-server/&lt;/code&gt;: pve 的虚拟机配置文件，这些文件也不要用 timeshift 备份，避免恢复时把虚拟机文件也给覆盖了。虚拟机文件的备份会由下一节中提到的自动脚本进行备份。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;/mnt/pve&lt;/code&gt;: 在 pve 下使用 nfs 存储时，远程 nfs 会自动 mount 到这个目录下，这些文件肯定也不能被 timeshift 备份。因此必须排除。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后通过设置的 exclude 为：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;{
+  ......
+  &amp;quot;exclude&amp;quot; : [
+    &amp;quot;/var/lib/ceph/**&amp;quot;,
+    &amp;quot;/root/**&amp;quot;,
+    &amp;quot;/var/lib/vz/**&amp;quot;,
+    &amp;quot;/etc/pve/qemu-server/**&amp;quot;,
+    &amp;quot;/mnt/pve/**&amp;quot;
+  ],
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;设置自动备份虚拟机文件&#34;&gt;设置自动备份虚拟机文件&lt;/h3&gt;
+&lt;p&gt;见下一章，推荐完成这个操作之后再执行手工备份。&lt;/p&gt;
+&lt;h3 id=&#34;手工备份&#34;&gt;手工备份&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;timeshift --create --comments &amp;quot;first backup after apt upgrade and basic soft install&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输入为：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Estimating system size...
+Creating new snapshot...(RSYNC)
+Saving to device: /dev/nvme0n1p4, mounted at path: /run/timeshift/6888/backup
+Syncing files with rsync...
+Created control file: /run/timeshift/6888/backup/timeshift/snapshots/2023-07-25_21-10-04/info.json
+RSYNC Snapshot saved successfully (41s)
+Tagged snapshot &#39;2023-07-25_21-10-04&#39;: ondemand
+------------------------------------------------------------------------------
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看当前备份情况：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;timeshift --list                                                                      
+Mounted &#39;/dev/nvme0n1p4&#39; at &#39;/run/timeshift/7219/backup&#39;
+Device : /dev/nvme0n1p4
+UUID   : 2411eb4e-67f1-4c7d-b633-17df1fa0c127
+Path   : /run/timeshift/7219/backup
+Mode   : RSYNC
+Status : OK
+1 snapshots, 64.5 GB free
+
+Num     Name                 Tags  Description                                            
+------------------------------------------------------------------------------
+0    &amp;gt;  2023-07-25_21-10-04  O     first backup after apt upgrade and basic soft install  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;结合备份之前看到的 timeshift 备份分区的大小为 65.8G，减去这里的 64.5 GB free，也就是这个备份用掉了 1.3 G 的磁盘空间。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>【归档】PVE环境下硬盘识别问题</title>
+        <link>https://tech.tflasp.fun/2024/pve-maxio1602/</link>
+        <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://tech.tflasp.fun/2024/pve-maxio1602/</guid>
+        <description>&lt;h2 id=&#34;问题复现&#34;&gt;问题复现&lt;/h2&gt;
+&lt;p&gt;爱国者P7000Z（以及所有使用MAXIO 1602主控的PCIe4.0固态）有个坑，两块以上只认一块。
+经分析发现，是联芸MAP1602主控的共性问题。
+给官方Linux内核提出了patch，内核6.4版本开始会集成进来。&lt;/p&gt;
+&lt;h2 id=&#34;解决方法&#34;&gt;解决方法&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;diff --git a/drivers/nvme/host/pci.c b/drivers/nvme/host/pci.c
+--- a/drivers/nvme/host/pci.c
++++ b/drivers/nvme/host/pci.c
+@@ -3424,6 +3424,8 @@ static const struct pci_device_id nvme_id_table[] = {
+                 .driver_data = NVME_QUIRK_BOGUS_NID, },
+         { PCI_DEVICE(0x1e4B, 0x1202),   /* MAXIO MAP1202 */
+                 .driver_data = NVME_QUIRK_BOGUS_NID, },
++        { PCI_DEVICE(0x1e4B, 0x1602),   /* MAXIO MAP1602 */
++                .driver_data = NVME_QUIRK_BOGUS_NID, },
+         { PCI_DEVICE(0x1cc1, 0x5350),   /* ADATA XPG GAMMIX S50 */
+                 .driver_data = NVME_QUIRK_BOGUS_NID, },
+         { PCI_DEVICE(0x1dbe, 0x5236),   /* ADATA XPG GAMMIX S70 */
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;PVE 8.0 beta最新，内核是6.2.16-1-pve，所以目前不支持联芸MAP1602主控的多块NVMe同时使用。
+现在需要使用的，修改不难，
+下载源码，找到代码中drivers/nvme/host/pci.c添加这两行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        { PCI_DEVICE(0x1e4B, 0x1602),   /* MAXIO MAP1602 */
+                .driver_data = NVME_QUIRK_BOGUS_NID, },
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重新编译安装，就好了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;20230616 分享编译好的内核，直接用就好，基于PVE 8.0beta源码6.2.16-1修改：
+链接: &lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1qdF8AVyjUOX_gL8Fxe9g6A?pwd=CHH1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pan.baidu.com/s/1qdF8AVyjUOX_gL8Fxe9g6A?pwd=CHH1&lt;/a&gt; 提取码: CHH1&lt;/p&gt;
+&lt;p&gt;20230708 分享编译好的内核，直接用就好，基于PVE 8.0正式版源码6.2.16-3修改：
+链接: &lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1juvlOR6uA7G53eiCJTAzGw?pwd=CHH2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pan.baidu.com/s/1juvlOR6uA7G53eiCJTAzGw?pwd=CHH2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;20230712 分享编译好的内核，直接用就好，基于PVE 8.0正式版源码6.2.16-4修改：
+链接: &lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1xHShA5LBaVl2uWH4cIUHGg?pwd=CHH3&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pan.baidu.com/s/1xHShA5LBaVl2uWH4cIUHGg?pwd=CHH3&lt;/a&gt; 提取码: CHH3&lt;/p&gt;
+&lt;p&gt;20230713 分享基于PVE 8.0正式版源码6.2.16-4修改的4TB未验证测试版，按114楼增加了延时属性。
+链接: &lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1Wgbva1awvubtBFdxhx0vaA?pwd=CHH4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pan.baidu.com/s/1Wgbva1awvubtBFdxhx0vaA?pwd=CHH4&lt;/a&gt; 提取码: CHH4&lt;/p&gt;
+&lt;p&gt;20230908 分享基于PVE 8.0正式版源码6.2.16-12修改的4TB未验证测试版，增加延时属性及初始化延迟。
+链接: &lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1D-0qjzBop9d_tOcRu7bs3Q?pwd=CHH5&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pan.baidu.com/s/1D-0qjzBop9d_tOcRu7bs3Q?pwd=CHH5&lt;/a&gt; 提取码: CHH5&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;安装方法：
+上传文件至PVE，登录PVE执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dpkg -i *.deb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启即可。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.chiphell.com/forum.php?mod=viewthread&amp;amp;tid=2524660&amp;amp;extra=page%3D1&amp;amp;ordertype=1&amp;amp;mobile=no&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ChipHell&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>【归档】PVE进入Recovery模式恢复系统</title>
+        <link>https://tech.tflasp.fun/2024/pve-recovery/</link>
+        <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://tech.tflasp.fun/2024/pve-recovery/</guid>
+        <description>&lt;h2 id=&#34;问题重现&#34;&gt;问题重现&lt;/h2&gt;
+&lt;p&gt;有时在经过错误的配置之后，pve 系统会无法使用，甚至无法进入系统和页面控制台。&lt;/p&gt;
+&lt;p&gt;此时需要有其他的方案来修复系统。&lt;/p&gt;
+&lt;h2 id=&#34;恢复模式&#34;&gt;恢复模式&lt;/h2&gt;
+&lt;h3 id=&#34;进入恢复模式&#34;&gt;进入恢复模式&lt;/h3&gt;
+&lt;p&gt;开机，选择 &amp;ldquo;Advanced options for Proxmox VE GNU/Linux&amp;rdquo; ，然后选择 Rescue mode。&lt;/p&gt;
+&lt;p&gt;用 root 密码登录即可。&lt;/p&gt;
+&lt;h3 id=&#34;启动集群&#34;&gt;启动集群&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;systemctl start pve-cluster
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这是就可以访问目录 &lt;code&gt;/etc/pve&lt;/code&gt; 来操作集群和虚拟机了。&lt;/p&gt;
+&lt;h3 id=&#34;操作虚拟机&#34;&gt;操作虚拟机&lt;/h3&gt;
+&lt;p&gt;比如关闭有问题的虚拟机：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;qm stop id
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;修改虚拟机配置&#34;&gt;修改虚拟机配置&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd /etc/pve/nodes/&amp;lt;node_name&amp;gt;/qume-server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里能看到各个虚拟机的配置文件，打开相应的配置文件修改即可，比如取消虚拟机的开机，只要将 onboot 修改为 0.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>【归档】PVE 8 安装与优化</title>
+        <link>https://tech.tflasp.fun/2024/pveinstall/</link>
+        <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://tech.tflasp.fun/2024/pveinstall/</guid>
+        <description>&lt;img src="https://tech.tflasp.fun/2024/pveinstall/pveinstaller.png" alt="Featured image of post 【归档】PVE 8 安装与优化" /&gt;&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;该文章还在CSDN发表，文章链接：&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Dd_w606/article/details/140447411&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pve镜像下载&#34;&gt;PVE镜像下载&lt;/h2&gt;
+&lt;p&gt;1、在浏览器输入以下网址下载pve的iso安装镜像。
+&lt;a class=&#34;link&#34; href=&#34;https://mirrors.tuna.tsinghua.edu.cn/proxmox/iso/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Download Proxmox VE&lt;/a&gt;
+清华大学开源镜像站，下拉选择对应版本下载iso文件。&lt;/p&gt;
+&lt;p&gt;2、制作系统引导盘&lt;/p&gt;
+&lt;p&gt;这里使用rufus工具将ISO文件刻录进U盘&lt;/p&gt;
+&lt;p&gt;Rufus&lt;a class=&#34;link&#34; href=&#34;https://wwf.lanzoul.com/i72bm24j105c&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载地址&lt;/a&gt;
+（密码:5k8t）&lt;/p&gt;
+&lt;p&gt;下载完成后直接双击运行，无需安装，设备中选择U盘，引导类型选择PVE镜像，然后点击开始，注意U盘中的原有数据会被格式化，重要数据记得备份。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 77; 
+			flex-basis: 185px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/rufus.jpg&#34; data-size=&#34;407x528&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/rufus.jpg&#34;
+			width=&#34;407&#34;
+			height=&#34;528&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/rufus_hu9022114c45b0b968251779c450e3cec5_49544_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/rufus_hu9022114c45b0b968251779c450e3cec5_49544_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;Rufus&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;Rufus&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;注意:一定要使用DD模式写入！使用iso模式写入可能导致某些版本的镜像无法启动！&lt;/p&gt;
+&lt;p&gt;当写盘完成时，显示准备就绪，即可关闭程序，弹出U盘，拔出U盘。&lt;/p&gt;
+&lt;h2 id=&#34;pve-安装&#34;&gt;PVE 安装&lt;/h2&gt;
+&lt;p&gt;1、打开主机电源，不断按键盘F12按键（不同主机的启动按键不同，请自行百度）选择由刚刚制作好的启动盘启动。&lt;/p&gt;
+&lt;p&gt;2、进入PVE安装页面，选择第一个Install Proxmox VE （Graphical），按回车。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 382; 
+			flex-basis: 918px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pveinstaller.png&#34; data-size=&#34;612x160&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pveinstaller.png&#34;
+			width=&#34;612&#34;
+			height=&#34;160&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pveinstaller_hufe9653886b00745c7725dbc66e171966_53939_480x0_resize_box_3.png 480w, https://tech.tflasp.fun/2024/pveinstall/pveinstaller_hufe9653886b00745c7725dbc66e171966_53939_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;然后会进入一段代码，此时不要作任何操作。&lt;/p&gt;
+&lt;p&gt;3、进入下面页面安装正式开始，首先使用协议页面点击我同意。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 163; 
+			flex-basis: 391px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve1.jpg&#34; data-size=&#34;728x446&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve1.jpg&#34;
+			width=&#34;728&#34;
+			height=&#34;446&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve1_hub24785e94cd7e6f41db6636150344cac_49630_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve1_hub24785e94cd7e6f41db6636150344cac_49630_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 163; 
+			flex-basis: 393px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve2.jpg&#34; data-size=&#34;746x455&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve2.jpg&#34;
+			width=&#34;746&#34;
+			height=&#34;455&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve2_hu1acf53cfa78a1e4f90e9ff45384034d9_60377_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve2_hu1acf53cfa78a1e4f90e9ff45384034d9_60377_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;填写邮件，网卡选默认即可。&lt;/p&gt;
+&lt;p&gt;Gateway是虚拟机网关，一般默认即可，然后点下一步设定密码。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 169; 
+			flex-basis: 405px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve3.jpg&#34; data-size=&#34;531x314&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve3.jpg&#34;
+			width=&#34;531&#34;
+			height=&#34;314&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve3_hu2ceec3d3c2db0ec84a95090d1db699e7_28816_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve3_hu2ceec3d3c2db0ec84a95090d1db699e7_28816_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 150; 
+			flex-basis: 360px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve4.jpg&#34; data-size=&#34;666x444&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve4.jpg&#34;
+			width=&#34;666&#34;
+			height=&#34;444&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve4_hue83c051bc6084a79c30f568f5a79db2e_54784_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve4_hue83c051bc6084a79c30f568f5a79db2e_54784_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 161; 
+			flex-basis: 388px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve5.jpg&#34; data-size=&#34;523x323&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve5.jpg&#34;
+			width=&#34;523&#34;
+			height=&#34;323&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve5_hu4f2a19208fc4497b6b447bea3fb5a425_21241_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve5_hu4f2a19208fc4497b6b447bea3fb5a425_21241_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这一步后就等待安装，安装完毕后重启记得拔掉u盘。&lt;/p&gt;
+&lt;p&gt;重启&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 336; 
+			flex-basis: 807px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve6.jpg&#34; data-size=&#34;387x115&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve6.jpg&#34;
+			width=&#34;387&#34;
+			height=&#34;115&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve6_hu2ae12b08c970ac2a9f4fe45e11f4d670_8260_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve6_hu2ae12b08c970ac2a9f4fe45e11f4d670_8260_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;进入到这个界面是代表安装成功了。&lt;/p&gt;
+&lt;h2 id=&#34;初始化pve&#34;&gt;初始化PVE&lt;/h2&gt;
+&lt;p&gt;接下来到主力机上进行操作，输入刚刚安装成功显示的网址（如前一个图，网址为192.168.10.20:8006）&lt;/p&gt;
+&lt;p&gt;注意输入时要带端口号，不然进不去。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 151; 
+			flex-basis: 363px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve7.jpg&#34; data-size=&#34;759x501&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve7.jpg&#34;
+			width=&#34;759&#34;
+			height=&#34;501&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve7_hua3ca2b5c349893fc36ea85467d17b35b_42848_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve7_hua3ca2b5c349893fc36ea85467d17b35b_42848_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;继续访问，进入pve登录界面。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 160; 
+			flex-basis: 384px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve8.jpg&#34; data-size=&#34;503x314&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve8.jpg&#34;
+			width=&#34;503&#34;
+			height=&#34;314&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve8_hu502096d5d5671b63054c6232b614f636_23804_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve8_hu502096d5d5671b63054c6232b614f636_23804_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;输入刚刚设置的密码，改为中文（非必须）即可进入pve，第一次登陆会显示无有效订阅，关闭即可。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 285; 
+			flex-basis: 686px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve9.jpg&#34; data-size=&#34;506x177&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve9.jpg&#34;
+			width=&#34;506&#34;
+			height=&#34;177&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve9_hu3638dc0d8e472d78a5849a297b0f193e_13023_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve9_hu3638dc0d8e472d78a5849a297b0f193e_13023_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;虚拟机直通设备&#34;&gt;虚拟机直通设备&lt;/h2&gt;
+&lt;p&gt;首先在主板BIOS里查看是否开启了硬件虚拟化（通常在Advanced栏下），同时CPU也必须要支持虚拟化才行。Intel VT-D。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 241; 
+			flex-basis: 579px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve10.jpg&#34; data-size=&#34;768x318&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve10.jpg&#34;
+			width=&#34;768&#34;
+			height=&#34;318&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve10_hu74c9828a0c0ef861f45d03445e0a54ab_60944_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve10_hu74c9828a0c0ef861f45d03445e0a54ab_60944_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如上图进入pve shell。&lt;/p&gt;
+&lt;p&gt;输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nano /etc/default/grub
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;对于intel-cpu添加-intel_iommuon操作如下&#34;&gt;对于Intel CPU，添加 intel_iommu=on，操作如下：&lt;/h4&gt;
+&lt;p&gt;2、找到：GRUB_CMDLINE_LINUX_DEFAULT=&amp;ldquo;quiet&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;然后修改为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot;quiet intel_iommu=on&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑完成后，使用快捷键 Ctrl + O 回车保存文件，Ctrl + X 退出编辑器。&lt;/p&gt;
+&lt;p&gt;3、使用命令 update-grub 保存更改并更新grub&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@pve:~# update-grub
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;4、更新完成后，使用命令 reboot 重启PVE系统&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@pve:~# reboot
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;从命令行运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dmesg | grep -e DMAR -e IOMMU
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果没有输出，则说明有问题。&lt;/p&gt;
+&lt;p&gt;如果有,可基本确认这个过程顺利完成! 接下来就可以为虚拟机正常的添加硬件直通了。&lt;/p&gt;
+&lt;h4 id=&#34;对于amd-cpu&#34;&gt;对于AMD CPU&lt;/h4&gt;
+&lt;p&gt;对于AMD CPU 添加 amd_iommu=on, 操作如下：&lt;/p&gt;
+&lt;p&gt;1、Shell 里面输入命令：nano /etc/default/grub&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@pve:~# nano /etc/default/grub
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2、在里面找到：GRUB_CMDLINE_LINUX_DEFAULT=&amp;ldquo;quiet&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;然后修改为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot;quiet amd_iommu=on&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑完成后，使用快捷键 Ctrl + O 回车保存文件，Ctrl + X 退出编辑器。&lt;/p&gt;
+&lt;p&gt;3、使用命令 update-grub 保存更改并更新grub&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@pve:~# update-grub
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;4、更新完成后，使用命令 reboot 重启PVE系统&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@pve:~# reboot
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样虚拟机直通设置就完成了。&lt;/p&gt;
+&lt;p&gt;当然，也可以使用pvetools来进行pve环境下的优化设置操作，更加方便（需换源）&lt;/p&gt;
+&lt;h2 id=&#34;虚拟机安装&#34;&gt;虚拟机安装&lt;/h2&gt;
+&lt;p&gt;pve安装虚拟机还是非常简单的，本篇我们将使用pve安装win10来演示一下安装过程，其他系统安装大同小异。&lt;/p&gt;
+&lt;p&gt;1、首先需要上传安装镜像，通过local(pve)→ISO镜像→上传，将win10镜像上传到pve中。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 237; 
+			flex-basis: 569px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve11.jpg&#34; data-size=&#34;773x326&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve11.jpg&#34;
+			width=&#34;773&#34;
+			height=&#34;326&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve11_hu02bfa4a0b3fa7c2ca9d67f7858fc4d5e_29652_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve11_hu02bfa4a0b3fa7c2ca9d67f7858fc4d5e_29652_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;2、回到pve首页，点击右上角的创建虚拟机，常规中自定义虚拟机的名称&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 270; 
+			flex-basis: 649px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve12.jpg&#34; data-size=&#34;768x284&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve12.jpg&#34;
+			width=&#34;768&#34;
+			height=&#34;284&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve12_hu96dfe6a9295b615d9d64b6705bb10d7f_28135_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve12_hu96dfe6a9295b615d9d64b6705bb10d7f_28135_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;3、操作系统中选择windows10镜像，然后在类型中选择安装操作系统的类型，注意版本也要选择。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 261; 
+			flex-basis: 628px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve13.jpg&#34; data-size=&#34;772x295&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve13.jpg&#34;
+			width=&#34;772&#34;
+			height=&#34;295&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve13_hub0c87ce57345371923d29d2a48e9dd81_46281_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve13_hub0c87ce57345371923d29d2a48e9dd81_46281_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;4、系统保持默认即可。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 353; 
+			flex-basis: 848px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve14.jpg&#34; data-size=&#34;764x216&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve14.jpg&#34;
+			width=&#34;764&#34;
+			height=&#34;216&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve14_hu2c5259a851325227a15596e602d27853_21677_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve14_hu2c5259a851325227a15596e602d27853_21677_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;5、硬盘中总线选择sata，其他保持默认。（当然SCSI、IDE等等都行的）&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 143; 
+			flex-basis: 343px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve15.jpg&#34; data-size=&#34;771x538&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve15.jpg&#34;
+			width=&#34;771&#34;
+			height=&#34;538&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve15_hu24775b9d217cd648832fa5ba6dfa19ae_35119_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve15_hu24775b9d217cd648832fa5ba6dfa19ae_35119_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;6、CPU根据机器配置选择，插槽表示cpu个数单CPU机器输入1，核心根据CPU选择，类别使用HOST系统性能最大化。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 384; 
+			flex-basis: 922px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve16.jpg&#34; data-size=&#34;773x201&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve16.jpg&#34;
+			width=&#34;773&#34;
+			height=&#34;201&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve16_hu6aae2a4c467a857f79ba6a5d5d7f8b8e_27227_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve16_hu6aae2a4c467a857f79ba6a5d5d7f8b8e_27227_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;7、内存根据机器配置以及具体需求设置。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 428; 
+			flex-basis: 1029px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve17.jpg&#34; data-size=&#34;759x177&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve17.jpg&#34;
+			width=&#34;759&#34;
+			height=&#34;177&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve17_hu57531c6c14e1a55e8fb902e2f78ff41b_15034_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve17_hu57531c6c14e1a55e8fb902e2f78ff41b_15034_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;8、网络设置中选择兼容性最高的e1000即可。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 309; 
+			flex-basis: 742px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve18.jpg&#34; data-size=&#34;767x248&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve18.jpg&#34;
+			width=&#34;767&#34;
+			height=&#34;248&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve18_hu877fb474b0f6f7fba8f5f56fc689d5c9_24247_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve18_hu877fb474b0f6f7fba8f5f56fc689d5c9_24247_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;9、最后检查配置没有，确认无误后点击完成。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 141; 
+			flex-basis: 340px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve19.jpg&#34; data-size=&#34;776x547&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve19.jpg&#34;
+			width=&#34;776&#34;
+			height=&#34;547&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve19_hub1f3d015def93a1d4c84965df41b641e_61164_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve19_hub1f3d015def93a1d4c84965df41b641e_61164_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;10、稍等几秒，机器创建成功。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 205; 
+			flex-basis: 492px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve20.jpg&#34; data-size=&#34;773x377&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve20.jpg&#34;
+			width=&#34;773&#34;
+			height=&#34;377&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve20_hu50d96014c3395628cd56018edea6adf8_44636_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve20_hu50d96014c3395628cd56018edea6adf8_44636_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;11、点击控制台启动，按照正常windows系统安装流程安装即可。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 147; 
+			flex-basis: 354px&#34;
+	&gt;
+	&lt;a href=&#34;https://tech.tflasp.fun/2024/pveinstall/pve21.jpg&#34; data-size=&#34;762x516&#34;&gt;
+		&lt;img src=&#34;https://tech.tflasp.fun/2024/pveinstall/pve21.jpg&#34;
+			width=&#34;762&#34;
+			height=&#34;516&#34;
+			srcset=&#34;https://tech.tflasp.fun/2024/pveinstall/pve21_huac9baecf74c17d38443fe5b784fed325_52090_480x0_resize_q75_box.jpg 480w, https://tech.tflasp.fun/2024/pveinstall/pve21_huac9baecf74c17d38443fe5b784fed325_52090_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
 </description>
         </item>
         

@@ -1,38 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='梳理一下我都知道些啥吧，不梳理一下我自己都不清楚'><title>关于咱都知道些啥</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='All in one服务器搭建，虚拟化集群冗余'><title>【归档】PVE 8 安装与优化</title>
 
-<link rel='canonical' href='https://dev.tflasp.fun/2024/pveinstall/'>
+<link rel='canonical' href='https://tech.tflasp.fun/2024/pveinstall/'>
 
-<link rel="stylesheet" href="/scss/style.min.46208cabd58e8bcef0cfb7d7ea6b561adcca3b91dd1fc6657493a44f03c5db75.css"><meta property='og:title' content='关于咱都知道些啥'>
-<meta property='og:description' content='梳理一下我都知道些啥吧，不梳理一下我自己都不清楚'>
-<meta property='og:url' content='https://dev.tflasp.fun/2024/pveinstall/'>
-<meta property='og:site_name' content='改BUG的大橘'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='记录' /><meta property='article:published_time' content='2024-08-31T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-08-31T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="关于咱都知道些啥">
-<meta name="twitter:description" content="梳理一下我都知道些啥吧，不梳理一下我自己都不清楚">
+<link rel="stylesheet" href="/scss/style.min.46208cabd58e8bcef0cfb7d7ea6b561adcca3b91dd1fc6657493a44f03c5db75.css"><meta property='og:title' content='【归档】PVE 8 安装与优化'>
+<meta property='og:description' content='All in one服务器搭建，虚拟化集群冗余'>
+<meta property='og:url' content='https://tech.tflasp.fun/2024/pveinstall/'>
+<meta property='og:site_name' content='TFL'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PVE' /><meta property='article:published_time' content='2024-07-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-07-15T00:00:00&#43;00:00'/><meta property='og:image' content='https://tech.tflasp.fun/2024/pveinstall/pveinstaller.png' />
+<meta name="twitter:title" content="【归档】PVE 8 安装与优化">
+<meta name="twitter:description" content="All in one服务器搭建，虚拟化集群冗余"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://tech.tflasp.fun/2024/pveinstall/pveinstaller.png' />
+    <link rel="shortcut icon" href="favicon.png" />
+
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <meta name="referrer" content="no-referrer-when-downgrade">
   
 
-<style>
-    :root {
-        --article-font-family: "Noto Serif SC", var(--base-font-family);
-    }
-</style>
-
-<script> 
-		(function () {
-		    const customFont = document.createElement('link');
-		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;700&display=swap"; 
-		    customFont.type = "text/css";
-		    customFont.rel = "stylesheet";
-		
-		    document.head.appendChild(customFont);
-		}());
-</script>
 
     </head>
     <body class="
@@ -68,7 +55,7 @@
 ">
     
 <div id="article-toolbar">
-    <a href="https://dev.tflasp.fun/" class="back-home">
+    <a href="https://tech.tflasp.fun/" class="back-home">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <polyline points="15 6 9 12 15 18" />
@@ -96,8 +83,8 @@
                     
                     
                         
-                        <img src="/img/avatar_hu4b2414d569d16040044da8ad8587484d_26765_300x0_resize_box_3.png" width="300"
-                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                        <img src="/img/avatar_hud8c3eacc67205865338b9c4de27b56c0_418856_300x0_resize_box_3.png" width="300"
+                            height="273" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
                 </a>
@@ -108,21 +95,8 @@
             
         
         
-        <h1 class="site-name"><a href="/">改BUG的大橘</a></h1>
-        <h2 class="site-description">Dev Page</h2><ol class="social-menu">
-                
-                    <li>
-                        <a 
-                            href='https://space.bilibili.com/3494374367300353'
-                            target="_blank"
-                            title="Bilibili"
-                        >
-                            
-                            
-                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
-                            
-                        </a>
-                    </li>
+        <h1 class="site-name"><a href="/">TFL</a></h1>
+        <h2 class="site-description">Tran ADJ Fail</h2><ol class="social-menu">
                 
                     <li>
                         <a 
@@ -169,26 +143,13 @@
                         </a>
                     </li>
                 
-                    <li>
-                        <a 
-                            href='https://qm.qq.com/q/z0wEdsiULK'
-                            target="_blank"
-                            title="QQ群"
-                        >
-                            
-                            
-                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-qq"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9.748a14.716 14.716 0 0 0 11.995 -.052c.275 -9.236 -11.104 -11.256 -11.995 .052z" /><path d="M18 10c.984 2.762 1.949 4.765 2 7.153c.014 .688 -.664 1.346 -1.184 .303c-.346 -.696 -.952 -1.181 -1.816 -1.456" /><path d="M17 16c.031 1.831 .147 3.102 -1 4" /><path d="M8 20c-1.099 -.87 -.914 -2.24 -1 -4" /><path d="M6 10c-.783 2.338 -1.742 4.12 -1.968 6.43c-.217 2.227 .716 1.644 1.16 .917c.296 -.487 .898 -.934 1.808 -1.347" /><path d="M15.898 13l-.476 -2" /><path d="M8 20l-1.5 1c-.5 .5 -.5 1 .5 1h10c1 0 1 -.5 .5 -1l-1.5 -1" /><path d="M13.75 7m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M10.25 7m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>
-                            
-                        </a>
-                    </li>
-                
             </ol></header>
 
     <ol class="menu" id="main-menu">
         
         
         
-
+        
         <li >
             <a href='/' >
                 
@@ -209,7 +170,7 @@
         </li>
         
         
-
+        
         <li >
             <a href='/about/' >
                 
@@ -229,7 +190,7 @@
         </li>
         
         
-
+        
         <li >
             <a href='/links/' >
                 
@@ -250,7 +211,7 @@
         </li>
         
         
-
+        
         <li >
             <a href='/archives/' >
                 
@@ -271,7 +232,7 @@
         </li>
         
         
-
+        
         <li >
             <a href='/search/' >
                 
@@ -317,27 +278,47 @@
 
 <main class="main full-width">
     
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/2024/pveinstall/">
+                <img src="/2024/pveinstall/pveinstaller_hufe9653886b00745c7725dbc66e171966_53939_800x0_resize_box_3.png"
+                        srcset="/2024/pveinstall/pveinstaller_hufe9653886b00745c7725dbc66e171966_53939_800x0_resize_box_3.png 800w, /2024/pveinstall/pveinstaller_hufe9653886b00745c7725dbc66e171966_53939_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="209" 
+                        loading="lazy"
+                        alt="Featured image of post 【归档】PVE 8 安装与优化" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/%E8%AE%B0%E5%BD%95/" >
-                记录
+            <a href="/categories/pve/" >
+                PVE
+            </a>
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B/" >
+                教程
+            </a>
+        
+            <a href="/categories/%E5%BD%92%E6%A1%A3/" >
+                归档
             </a>
         
     </header>
     
 
     <h2 class="article-title">
-        <a href="/2024/pveinstall/">关于咱都知道些啥</a>
+        <a href="/2024/pveinstall/">【归档】PVE 8 安装与优化</a>
     </h2>
 
     
     <h3 class="article-subtitle">
-        梳理一下我都知道些啥吧，不梳理一下我自己都不清楚
+        All in one服务器搭建，虚拟化集群冗余
     </h3>
     
 
@@ -354,7 +335,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Aug 31, 2024</time>
+                <time class="article-time--published">Jul 15, 2024</time>
             </div>
         
 
@@ -369,7 +350,7 @@
 
 
                 <time class="article-words">
-                    737字
+                    1615字
                 </time>
             </div>
         
@@ -381,87 +362,484 @@
     <section class="article-content">
     
     
-    <p>唔，感觉有好多，就简单一一梳理一下吧，文章格式什么的可能就不怎么规范了，所以才放到<code>dev站</code>上嘛。</p>
-<pre><code>├─硬件
-│  ├─Arduino开发
-│  ├─BGA焊接
-│  ├─SSD
-│  │  ├─SSD原理
-│  │  │  ├─主控
-│  │  │  │  └─FTL表
-│  │  │  └─闪存
-│  │  │      ├─MLC
-│  │  │      ├─PLC
-│  │  │      ├─QLC
-│  │  │      ├─SLC
-│  │  │      └─TLC
-│  │  ├─SSD开卡
-│  │  ├─SSD维修
-│  │  └─手搓SSD
-│  ├─TSOP焊接
-│  ├─主机故障排除、解决
-│  │  ├─PC维护
-│  │  └─服务器运维
-│  ├─交换机
-│  │  └─console
-│  ├─显卡维修（理论）
-│  │  ├─1.8v
-│  │  ├─3.3v
-│  │  ├─5v
-│  │  └─PEX
-│  └─硬件搭配与组装
-│      ├─PC搭配选购
-│      └─服务器选购
-└─软件
-    ├─Linux
-    │  ├─CentOS
-    │  │  └─换源
-    │  ├─Linux_minit
-    │  ├─PVE
-    │  │  ├─换源
-    │  │  └─直通（iommu）
-    │  │      ├─ROMBAR
-    │  │      └─SATA CTRL
-    │  └─Ubuntu
-    │      ├─SSH
-    │      └─换源
-    ├─Windows
-    │  ├─WindowsSubsystem
-    │  │  ├─WSA
-    │  │  │  └─Powershell安装
-    │  │  └─WSL
-    │  ├─Windows优化
-    │  │  ├─control
-    │  │  ├─gpedit.msc
-    │  │  ├─hosts
-    │  │  ├─powershell
-    │  │  ├─regedit
-    │  │  ├─taskmgr
-    │  │  └─winver
-    │  ├─Windows安装方式
-    │  │  ├─Dism++释放镜像
-    │  │  ├─GHO还原
-    │  │  ├─WinNTSetup
-    │  │  ├─原版镜像安装
-    │  │  └─手动释放、添加引导
-    │  └─剪辑
-    │      ├─Ae
-    │      │  └─不会
-    │      ├─Au
-    │      │  └─会
-    │      ├─Pr
-    │      │  └─会一点
-    │      └─Ps
-    │          └─会一点
-    └─开发
-        ├─C++
-        │  └─Windows简单窗体应用
-        ├─Hugo
-        │  ├─docsy
-        │  └─stack
-        └─Python
+    <h2 id="前言">前言</h2>
+<p>该文章还在CSDN发表，文章链接：<a class="link" href="https://blog.csdn.net/Dd_w606/article/details/140447411"  target="_blank" rel="noopener"
+    >Link</a></p>
+<h2 id="pve镜像下载">PVE镜像下载</h2>
+<p>1、在浏览器输入以下网址下载pve的iso安装镜像。
+<a class="link" href="https://mirrors.tuna.tsinghua.edu.cn/proxmox/iso/"  target="_blank" rel="noopener"
+    >Download Proxmox VE</a>
+清华大学开源镜像站，下拉选择对应版本下载iso文件。</p>
+<p>2、制作系统引导盘</p>
+<p>这里使用rufus工具将ISO文件刻录进U盘</p>
+<p>Rufus<a class="link" href="https://wwf.lanzoul.com/i72bm24j105c"  target="_blank" rel="noopener"
+    >下载地址</a>
+（密码:5k8t）</p>
+<p>下载完成后直接双击运行，无需安装，设备中选择U盘，引导类型选择PVE镜像，然后点击开始，注意U盘中的原有数据会被格式化，重要数据记得备份。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 77; 
+			flex-basis: 185px"
+	>
+	<a href="/2024/pveinstall/rufus.jpg" data-size="407x528">
+		<img src="/2024/pveinstall/rufus.jpg"
+			width="407"
+			height="528"
+			srcset="/2024/pveinstall/rufus_hu9022114c45b0b968251779c450e3cec5_49544_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/rufus_hu9022114c45b0b968251779c450e3cec5_49544_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			alt="Rufus">
+	</a>
+	
+	<figcaption>Rufus</figcaption>
+	
+</figure></p>
+<p>注意:一定要使用DD模式写入！使用iso模式写入可能导致某些版本的镜像无法启动！</p>
+<p>当写盘完成时，显示准备就绪，即可关闭程序，弹出U盘，拔出U盘。</p>
+<h2 id="pve-安装">PVE 安装</h2>
+<p>1、打开主机电源，不断按键盘F12按键（不同主机的启动按键不同，请自行百度）选择由刚刚制作好的启动盘启动。</p>
+<p>2、进入PVE安装页面，选择第一个Install Proxmox VE （Graphical），按回车。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 382; 
+			flex-basis: 918px"
+	>
+	<a href="/2024/pveinstall/pveinstaller.png" data-size="612x160">
+		<img src="/2024/pveinstall/pveinstaller.png"
+			width="612"
+			height="160"
+			srcset="/2024/pveinstall/pveinstaller_hufe9653886b00745c7725dbc66e171966_53939_480x0_resize_box_3.png 480w, /2024/pveinstall/pveinstaller_hufe9653886b00745c7725dbc66e171966_53939_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>然后会进入一段代码，此时不要作任何操作。</p>
+<p>3、进入下面页面安装正式开始，首先使用协议页面点击我同意。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 163; 
+			flex-basis: 391px"
+	>
+	<a href="/2024/pveinstall/pve1.jpg" data-size="728x446">
+		<img src="/2024/pveinstall/pve1.jpg"
+			width="728"
+			height="446"
+			srcset="/2024/pveinstall/pve1_hub24785e94cd7e6f41db6636150344cac_49630_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve1_hub24785e94cd7e6f41db6636150344cac_49630_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 163; 
+			flex-basis: 393px"
+	>
+	<a href="/2024/pveinstall/pve2.jpg" data-size="746x455">
+		<img src="/2024/pveinstall/pve2.jpg"
+			width="746"
+			height="455"
+			srcset="/2024/pveinstall/pve2_hu1acf53cfa78a1e4f90e9ff45384034d9_60377_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve2_hu1acf53cfa78a1e4f90e9ff45384034d9_60377_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>填写邮件，网卡选默认即可。</p>
+<p>Gateway是虚拟机网关，一般默认即可，然后点下一步设定密码。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 169; 
+			flex-basis: 405px"
+	>
+	<a href="/2024/pveinstall/pve3.jpg" data-size="531x314">
+		<img src="/2024/pveinstall/pve3.jpg"
+			width="531"
+			height="314"
+			srcset="/2024/pveinstall/pve3_hu2ceec3d3c2db0ec84a95090d1db699e7_28816_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve3_hu2ceec3d3c2db0ec84a95090d1db699e7_28816_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 150; 
+			flex-basis: 360px"
+	>
+	<a href="/2024/pveinstall/pve4.jpg" data-size="666x444">
+		<img src="/2024/pveinstall/pve4.jpg"
+			width="666"
+			height="444"
+			srcset="/2024/pveinstall/pve4_hue83c051bc6084a79c30f568f5a79db2e_54784_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve4_hue83c051bc6084a79c30f568f5a79db2e_54784_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 161; 
+			flex-basis: 388px"
+	>
+	<a href="/2024/pveinstall/pve5.jpg" data-size="523x323">
+		<img src="/2024/pveinstall/pve5.jpg"
+			width="523"
+			height="323"
+			srcset="/2024/pveinstall/pve5_hu4f2a19208fc4497b6b447bea3fb5a425_21241_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve5_hu4f2a19208fc4497b6b447bea3fb5a425_21241_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>这一步后就等待安装，安装完毕后重启记得拔掉u盘。</p>
+<p>重启</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 336; 
+			flex-basis: 807px"
+	>
+	<a href="/2024/pveinstall/pve6.jpg" data-size="387x115">
+		<img src="/2024/pveinstall/pve6.jpg"
+			width="387"
+			height="115"
+			srcset="/2024/pveinstall/pve6_hu2ae12b08c970ac2a9f4fe45e11f4d670_8260_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve6_hu2ae12b08c970ac2a9f4fe45e11f4d670_8260_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>进入到这个界面是代表安装成功了。</p>
+<h2 id="初始化pve">初始化PVE</h2>
+<p>接下来到主力机上进行操作，输入刚刚安装成功显示的网址（如前一个图，网址为192.168.10.20:8006）</p>
+<p>注意输入时要带端口号，不然进不去。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 151; 
+			flex-basis: 363px"
+	>
+	<a href="/2024/pveinstall/pve7.jpg" data-size="759x501">
+		<img src="/2024/pveinstall/pve7.jpg"
+			width="759"
+			height="501"
+			srcset="/2024/pveinstall/pve7_hua3ca2b5c349893fc36ea85467d17b35b_42848_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve7_hua3ca2b5c349893fc36ea85467d17b35b_42848_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>继续访问，进入pve登录界面。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 160; 
+			flex-basis: 384px"
+	>
+	<a href="/2024/pveinstall/pve8.jpg" data-size="503x314">
+		<img src="/2024/pveinstall/pve8.jpg"
+			width="503"
+			height="314"
+			srcset="/2024/pveinstall/pve8_hu502096d5d5671b63054c6232b614f636_23804_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve8_hu502096d5d5671b63054c6232b614f636_23804_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>输入刚刚设置的密码，改为中文（非必须）即可进入pve，第一次登陆会显示无有效订阅，关闭即可。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 285; 
+			flex-basis: 686px"
+	>
+	<a href="/2024/pveinstall/pve9.jpg" data-size="506x177">
+		<img src="/2024/pveinstall/pve9.jpg"
+			width="506"
+			height="177"
+			srcset="/2024/pveinstall/pve9_hu3638dc0d8e472d78a5849a297b0f193e_13023_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve9_hu3638dc0d8e472d78a5849a297b0f193e_13023_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<h2 id="虚拟机直通设备">虚拟机直通设备</h2>
+<p>首先在主板BIOS里查看是否开启了硬件虚拟化（通常在Advanced栏下），同时CPU也必须要支持虚拟化才行。Intel VT-D。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 241; 
+			flex-basis: 579px"
+	>
+	<a href="/2024/pveinstall/pve10.jpg" data-size="768x318">
+		<img src="/2024/pveinstall/pve10.jpg"
+			width="768"
+			height="318"
+			srcset="/2024/pveinstall/pve10_hu74c9828a0c0ef861f45d03445e0a54ab_60944_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve10_hu74c9828a0c0ef861f45d03445e0a54ab_60944_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>如上图进入pve shell。</p>
+<p>输入</p>
+<pre><code>nano /etc/default/grub
 </code></pre>
-<h2 id="未完待续">未完待续</h2>
+<h4 id="对于intel-cpu添加-intel_iommuon操作如下">对于Intel CPU，添加 intel_iommu=on，操作如下：</h4>
+<p>2、找到：GRUB_CMDLINE_LINUX_DEFAULT=&ldquo;quiet&rdquo;</p>
+<p>然后修改为</p>
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet intel_iommu=on&quot;
+</code></pre>
+<p>编辑完成后，使用快捷键 Ctrl + O 回车保存文件，Ctrl + X 退出编辑器。</p>
+<p>3、使用命令 update-grub 保存更改并更新grub</p>
+<pre><code>root@pve:~# update-grub
+</code></pre>
+<p>4、更新完成后，使用命令 reboot 重启PVE系统</p>
+<pre><code>root@pve:~# reboot
+</code></pre>
+<p>从命令行运行</p>
+<pre><code>dmesg | grep -e DMAR -e IOMMU
+</code></pre>
+<p>如果没有输出，则说明有问题。</p>
+<p>如果有,可基本确认这个过程顺利完成! 接下来就可以为虚拟机正常的添加硬件直通了。</p>
+<h4 id="对于amd-cpu">对于AMD CPU</h4>
+<p>对于AMD CPU 添加 amd_iommu=on, 操作如下：</p>
+<p>1、Shell 里面输入命令：nano /etc/default/grub</p>
+<pre><code>root@pve:~# nano /etc/default/grub
+</code></pre>
+<p>2、在里面找到：GRUB_CMDLINE_LINUX_DEFAULT=&ldquo;quiet&rdquo;</p>
+<p>然后修改为</p>
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet amd_iommu=on&quot;
+</code></pre>
+<p>编辑完成后，使用快捷键 Ctrl + O 回车保存文件，Ctrl + X 退出编辑器。</p>
+<p>3、使用命令 update-grub 保存更改并更新grub</p>
+<pre><code>root@pve:~# update-grub
+</code></pre>
+<p>4、更新完成后，使用命令 reboot 重启PVE系统</p>
+<pre><code>root@pve:~# reboot
+</code></pre>
+<p>这样虚拟机直通设置就完成了。</p>
+<p>当然，也可以使用pvetools来进行pve环境下的优化设置操作，更加方便（需换源）</p>
+<h2 id="虚拟机安装">虚拟机安装</h2>
+<p>pve安装虚拟机还是非常简单的，本篇我们将使用pve安装win10来演示一下安装过程，其他系统安装大同小异。</p>
+<p>1、首先需要上传安装镜像，通过local(pve)→ISO镜像→上传，将win10镜像上传到pve中。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 237; 
+			flex-basis: 569px"
+	>
+	<a href="/2024/pveinstall/pve11.jpg" data-size="773x326">
+		<img src="/2024/pveinstall/pve11.jpg"
+			width="773"
+			height="326"
+			srcset="/2024/pveinstall/pve11_hu02bfa4a0b3fa7c2ca9d67f7858fc4d5e_29652_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve11_hu02bfa4a0b3fa7c2ca9d67f7858fc4d5e_29652_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>2、回到pve首页，点击右上角的创建虚拟机，常规中自定义虚拟机的名称</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 270; 
+			flex-basis: 649px"
+	>
+	<a href="/2024/pveinstall/pve12.jpg" data-size="768x284">
+		<img src="/2024/pveinstall/pve12.jpg"
+			width="768"
+			height="284"
+			srcset="/2024/pveinstall/pve12_hu96dfe6a9295b615d9d64b6705bb10d7f_28135_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve12_hu96dfe6a9295b615d9d64b6705bb10d7f_28135_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>3、操作系统中选择windows10镜像，然后在类型中选择安装操作系统的类型，注意版本也要选择。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 261; 
+			flex-basis: 628px"
+	>
+	<a href="/2024/pveinstall/pve13.jpg" data-size="772x295">
+		<img src="/2024/pveinstall/pve13.jpg"
+			width="772"
+			height="295"
+			srcset="/2024/pveinstall/pve13_hub0c87ce57345371923d29d2a48e9dd81_46281_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve13_hub0c87ce57345371923d29d2a48e9dd81_46281_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>4、系统保持默认即可。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 353; 
+			flex-basis: 848px"
+	>
+	<a href="/2024/pveinstall/pve14.jpg" data-size="764x216">
+		<img src="/2024/pveinstall/pve14.jpg"
+			width="764"
+			height="216"
+			srcset="/2024/pveinstall/pve14_hu2c5259a851325227a15596e602d27853_21677_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve14_hu2c5259a851325227a15596e602d27853_21677_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>5、硬盘中总线选择sata，其他保持默认。（当然SCSI、IDE等等都行的）</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 143; 
+			flex-basis: 343px"
+	>
+	<a href="/2024/pveinstall/pve15.jpg" data-size="771x538">
+		<img src="/2024/pveinstall/pve15.jpg"
+			width="771"
+			height="538"
+			srcset="/2024/pveinstall/pve15_hu24775b9d217cd648832fa5ba6dfa19ae_35119_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve15_hu24775b9d217cd648832fa5ba6dfa19ae_35119_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>6、CPU根据机器配置选择，插槽表示cpu个数单CPU机器输入1，核心根据CPU选择，类别使用HOST系统性能最大化。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 384; 
+			flex-basis: 922px"
+	>
+	<a href="/2024/pveinstall/pve16.jpg" data-size="773x201">
+		<img src="/2024/pveinstall/pve16.jpg"
+			width="773"
+			height="201"
+			srcset="/2024/pveinstall/pve16_hu6aae2a4c467a857f79ba6a5d5d7f8b8e_27227_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve16_hu6aae2a4c467a857f79ba6a5d5d7f8b8e_27227_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>7、内存根据机器配置以及具体需求设置。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 428; 
+			flex-basis: 1029px"
+	>
+	<a href="/2024/pveinstall/pve17.jpg" data-size="759x177">
+		<img src="/2024/pveinstall/pve17.jpg"
+			width="759"
+			height="177"
+			srcset="/2024/pveinstall/pve17_hu57531c6c14e1a55e8fb902e2f78ff41b_15034_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve17_hu57531c6c14e1a55e8fb902e2f78ff41b_15034_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>8、网络设置中选择兼容性最高的e1000即可。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 309; 
+			flex-basis: 742px"
+	>
+	<a href="/2024/pveinstall/pve18.jpg" data-size="767x248">
+		<img src="/2024/pveinstall/pve18.jpg"
+			width="767"
+			height="248"
+			srcset="/2024/pveinstall/pve18_hu877fb474b0f6f7fba8f5f56fc689d5c9_24247_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve18_hu877fb474b0f6f7fba8f5f56fc689d5c9_24247_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>9、最后检查配置没有，确认无误后点击完成。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 141; 
+			flex-basis: 340px"
+	>
+	<a href="/2024/pveinstall/pve19.jpg" data-size="776x547">
+		<img src="/2024/pveinstall/pve19.jpg"
+			width="776"
+			height="547"
+			srcset="/2024/pveinstall/pve19_hub1f3d015def93a1d4c84965df41b641e_61164_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve19_hub1f3d015def93a1d4c84965df41b641e_61164_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>10、稍等几秒，机器创建成功。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 205; 
+			flex-basis: 492px"
+	>
+	<a href="/2024/pveinstall/pve20.jpg" data-size="773x377">
+		<img src="/2024/pveinstall/pve20.jpg"
+			width="773"
+			height="377"
+			srcset="/2024/pveinstall/pve20_hu50d96014c3395628cd56018edea6adf8_44636_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve20_hu50d96014c3395628cd56018edea6adf8_44636_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>11、点击控制台启动，按照正常windows系统安装流程安装即可。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 147; 
+			flex-basis: 354px"
+	>
+	<a href="/2024/pveinstall/pve21.jpg" data-size="762x516">
+		<img src="/2024/pveinstall/pve21.jpg"
+			width="762"
+			height="516"
+			srcset="/2024/pveinstall/pve21_huac9baecf74c17d38443fe5b784fed325_52090_480x0_resize_q75_box.jpg 480w, /2024/pveinstall/pve21_huac9baecf74c17d38443fe5b784fed325_52090_1024x0_resize_q75_box.jpg 1024w"
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
 
 </section>
 
@@ -470,7 +848,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>
+            <a href="/tags/pve/">PVE</a>
         
     </section>
 
@@ -496,6 +874,49 @@
     <aside class="related-contents--wrapper">
     
     
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2024/rtl8125-driver/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【归档】PVE安装RTL8125驱动</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/timeshift/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【归档】PVE安装配置timeshift</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/pve-maxio1602/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【归档】PVE环境下硬盘识别问题</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
 </aside>
 
      
@@ -510,6 +931,22 @@
     <footer class="site-footer">
   
 
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
 
@@ -541,8 +978,8 @@
         
             2021 - 
         
-        2024 <a href="https://stack-theme-mod.vercel.app/">改Bug的大橘</a><i class="fas fa-bell"></i><br>
-      共书写了0.9k字·共 1篇文章</br><span><p>
+        2024 <a href="https://stack-theme-mod.vercel.app/">TFL</a><i class="fas fa-bell"></i><br>
+      共书写了7.4k字·共 9篇文章</br><span><p>
     </section>
   
       
@@ -555,7 +992,7 @@
   </span>
 </div><section class="powerby">
         
-            TFL's Personal Website | LTP DEV.2.5.4 <br/>
+            TFL's Personal Website | EXT-3.5.07 <br/>
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a><br />
          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
@@ -697,7 +1134,21 @@ document.getElementById('days').innerHTML = number_of_days;
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#未完待续">未完待续</a></li>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#pve镜像下载">PVE镜像下载</a></li>
+    <li><a href="#pve-安装">PVE 安装</a></li>
+    <li><a href="#初始化pve">初始化PVE</a></li>
+    <li><a href="#虚拟机直通设备">虚拟机直通设备</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#对于intel-cpu添加-intel_iommuon操作如下">对于Intel CPU，添加 intel_iommu=on，操作如下：</a></li>
+            <li><a href="#对于amd-cpu">对于AMD CPU</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#虚拟机安装">虚拟机安装</a></li>
   </ol>
 </nav>
         </div>
@@ -720,7 +1171,15 @@ document.getElementById('days').innerHTML = number_of_days;
     <h3 class="widget-title"> </h3>
     <div class="widget-body">
         <div class="category-list">
-            <div class="category-list-item"><a href="https://dev.tflasp.fun/categories/%E8%AE%B0%E5%BD%95/" class="category-list-link">记录<span class="category-list-count">1</a>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/pve/" class="category-list-link">pve<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/system/" class="category-list-link">system<span class="category-list-count">1</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/%E5%BD%92%E6%A1%A3/" class="category-list-link">归档<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/%E6%95%99%E7%A8%8B/" class="category-list-link">教程<span class="category-list-count">8</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/%E9%93%BE%E6%8E%A5/" class="category-list-link">链接<span class="category-list-count">1</a>
             </span></div>
         </div>
     </div>
@@ -750,7 +1209,7 @@ document.getElementById('days').innerHTML = number_of_days;
                     <a href="/archives/#2024">
                         
                             <span class="year">2024</span>
-                            <span class="count">1</span>
+                            <span class="count">9</span>
                         
                     </a> 
                 </div>
@@ -773,8 +1232,20 @@ document.getElementById('days').innerHTML = number_of_days;
 
     <div class="tagCloud-tags">
         
-            <a href="/tags/%E8%AE%B0%E5%BD%95/" class="font_size_1">
-                记录
+            <a href="/tags/pve/" class="font_size_6">
+                PVE
+            </a>
+        
+            <a href="/tags/system/" class="font_size_1">
+                System
+            </a>
+        
+            <a href="/tags/%E6%95%99%E7%A8%8B/" class="font_size_1">
+                教程
+            </a>
+        
+            <a href="/tags/%E9%93%BE%E6%8E%A5/" class="font_size_1">
+                链接
             </a>
         
     </div>

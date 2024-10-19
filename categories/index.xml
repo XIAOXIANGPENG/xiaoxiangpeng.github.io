@@ -1,25 +1,53 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on 改BUG的大橘</title>
-    <link>https://dev.tflasp.fun/categories/</link>
-    <description>Recent content in Categories on 改BUG的大橘</description>
+    <title>Categories on TFL</title>
+    <link>https://tech.tflasp.fun/categories/</link>
+    <description>Recent content in Categories on TFL</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://dev.tflasp.fun/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.tflasp.fun/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>记录</title>
-      <link>https://dev.tflasp.fun/categories/%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://dev.tflasp.fun/categories/%E8%AE%B0%E5%BD%95/</guid>
+      <title>教程</title>
+      <link>https://tech.tflasp.fun/categories/%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/categories/%E6%95%99%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System</title>
+      <link>https://tech.tflasp.fun/categories/system/</link>
+      <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/categories/system/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>链接</title>
+      <link>https://tech.tflasp.fun/categories/%E9%93%BE%E6%8E%A5/</link>
+      <pubDate>Fri, 23 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/categories/%E9%93%BE%E6%8E%A5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PVE</title>
+      <link>https://tech.tflasp.fun/categories/pve/</link>
+      <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/categories/pve/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>归档</title>
+      <link>https://tech.tflasp.fun/categories/%E5%BD%92%E6%A1%A3/</link>
+      <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/categories/%E5%BD%92%E6%A1%A3/</guid>
       <description></description>
     </item>
     <item>
       <title>Test</title>
-      <link>https://dev.tflasp.fun/categories/test/</link>
+      <link>https://tech.tflasp.fun/categories/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://dev.tflasp.fun/categories/test/</guid>
+      <guid>https://tech.tflasp.fun/categories/test/</guid>
       <description></description>
     </item>
   </channel>

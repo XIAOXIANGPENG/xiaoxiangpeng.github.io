@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='在2020年后的新笔记本电脑一般已开启Bitlocker功能，若无备份密钥，则数据丢失后无法找回！'><title>【教程】保障数据安全，关闭Bitlocker</title>
+
+<link rel='canonical' href='https://tech.tflasp.fun/2024/disable-bitlocker/'>
+
+<link rel="stylesheet" href="/scss/style.min.46208cabd58e8bcef0cfb7d7ea6b561adcca3b91dd1fc6657493a44f03c5db75.css"><meta property='og:title' content='【教程】保障数据安全，关闭Bitlocker'>
+<meta property='og:description' content='在2020年后的新笔记本电脑一般已开启Bitlocker功能，若无备份密钥，则数据丢失后无法找回！'>
+<meta property='og:url' content='https://tech.tflasp.fun/2024/disable-bitlocker/'>
+<meta property='og:site_name' content='TFL'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='System' /><meta property='article:published_time' content='2024-09-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-09-26T00:00:00&#43;00:00'/><meta property='og:image' content='https://tech.tflasp.fun/2024/disable-bitlocker/slug.png' />
+<meta name="twitter:title" content="【教程】保障数据安全，关闭Bitlocker">
+<meta name="twitter:description" content="在2020年后的新笔记本电脑一般已开启Bitlocker功能，若无备份密钥，则数据丢失后无法找回！"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://tech.tflasp.fun/2024/disable-bitlocker/slug.png' />
+    <link rel="shortcut icon" href="favicon.png" />
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  
+
+
+    </head>
+    <body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "dark");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    <!-- 
+        extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://tech.tflasp.fun/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hud8c3eacc67205865338b9c4de27b56c0_418856_300x0_resize_box_3.png" width="300"
+                            height="273" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💬</span>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">TFL</a></h1>
+        <h2 class="site-description">Tran ADJ Fail</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://blog.csdn.net/Dd_w606'
+                            target="_blank"
+                            title="CSDN"
+                        >
+                            
+                            
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a 
+                            href='https://tflasp.fun/2024/links/'
+                            target="_blank"
+                            title="FileShare"
+                        >
+                            
+                            
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-zip"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 20.735a2 2 0 0 1 -1 -1.735v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-1" /><path d="M11 17a2 2 0 0 1 2 2v2a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-2a2 2 0 0 1 2 -2z" /><path d="M11 5l-1 0" /><path d="M13 7l-1 0" /><path d="M11 9l-1 0" /><path d="M13 11l-1 0" /><path d="M11 13l-1 0" /><path d="M13 15l-1 0" /></svg>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a 
+                            href='https://github.com/TFL-ASP'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+<main class="main full-width">
+    
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/2024/disable-bitlocker/">
+                <img src="/2024/disable-bitlocker/slug_hu9aa84ac18bb931771514ff44b5481641_49366_800x0_resize_box_3.png"
+                        srcset="/2024/disable-bitlocker/slug_hu9aa84ac18bb931771514ff44b5481641_49366_800x0_resize_box_3.png 800w, /2024/disable-bitlocker/slug_hu9aa84ac18bb931771514ff44b5481641_49366_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="319" 
+                        loading="lazy"
+                        alt="Featured image of post 【教程】保障数据安全，关闭Bitlocker" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/system/" >
+                System
+            </a>
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B/" >
+                教程
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2024/disable-bitlocker/">【教程】保障数据安全，关闭Bitlocker</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        在2020年后的新笔记本电脑一般已开启Bitlocker功能，若无备份密钥，则数据丢失后无法找回！
+    </h3>
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 26, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    1459字
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="前言">前言</h2>
+<blockquote>
+<p>近期有几个朋友笔记本硬盘坏了，拿去恢复数据，硬件层面的问题解决后发现硬盘有BitLocker加密，而他全然不知道此事，微软账号里也没有备份，所以数据也就无法找回了。这也是我写这篇文章的原因之一。</p>
+</blockquote>
+<p>BitLocker 是一项 Windows 安全功能，可为整个卷提供加密，解决因设备丢失、被盗或不适当停用而导致数据被盗或泄露的威胁。但是，<strong>在2020年后的新笔记本电脑一般已开启Bitlocker功能（即硬盘中数据已被加密）</strong>，若计算机硬件有改变或损坏，重新进入已加密的系统会要求输入“恢复密钥”，如下图。<strong>若密钥丢失，则加密分区中的数据全部丢失！</strong></p>
+<p>如果的确担心数据安全或有重要数据，请<strong>及时备份密钥</strong>（或使用其他加密软件，如：<code>VeraCrypt</code>），或者按照公司要求保存在指定驱动器里！</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 222; 
+			flex-basis: 533px"
+	>
+	<a href="/2024/disable-bitlocker/recovery.png" data-size="676x304">
+		<img src="/2024/disable-bitlocker/recovery.png"
+			width="676"
+			height="304"
+			srcset="/2024/disable-bitlocker/recovery_hu5c1f7f68b6da2f524f10fc57c5d65e43_137490_480x0_resize_box_3.png 480w, /2024/disable-bitlocker/recovery_hu5c1f7f68b6da2f524f10fc57c5d65e43_137490_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="Bitlocker恢复界面（将会在开机时显示）">
+	</a>
+	
+	<figcaption>Bitlocker恢复界面（将会在开机时显示）</figcaption>
+	
+</figure></p>
+<h2 id="原理">原理</h2>
+<p>若对原理不感兴趣可以 <a class="link" href="" >往下翻</a> 或 <a class="link" href="" >单击右侧目录栏跳转至“<strong>解密方法</strong>”</a> 以查看解密步骤！</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 127; 
+			flex-basis: 306px"
+	>
+	<a href="/2024/disable-bitlocker/bitlocker.png" data-size="669x524">
+		<img src="/2024/disable-bitlocker/bitlocker.png"
+			width="669"
+			height="524"
+			srcset="/2024/disable-bitlocker/bitlocker_hu351eb91ec3bf236eb95b8deb32d48588_314421_480x0_resize_box_3.png 480w, /2024/disable-bitlocker/bitlocker_hu351eb91ec3bf236eb95b8deb32d48588_314421_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="Bitlocker使用TPM解密 原理图（图源：MSDN）">
+	</a>
+	
+	<figcaption>Bitlocker使用TPM解密 原理图（图源：MSDN）</figcaption>
+	
+</figure></p>
+<blockquote>
+<p>图解：</p>
+<ol>
+<li>BIOS 启动并初始化TPM。并measure firmware部分敏感内容和启动分区以及bootloader，将结果放入PCR组。</li>
+</ol>
+<p>2.如果 PCR 值与期望值相匹配，则 TPM 将使用存储根密钥 (SRK) 对卷主密钥 (VMK) 进行解密。</p>
+<ol start="3">
+<li>
+<p>从卷中读取加密 FVEK，并使用解密 VMK 对其进行解密。</p>
+</li>
+<li>
+<p>访问磁盘扇区时，使用 FVEK 进行解密。</p>
+</li>
+<li>
+<p>为应用程序和过程提供解密数据。</p>
+</li>
+</ol>
+<p>其中SRK存储在TPM芯片中，它是整个过程的信任根。BitLocker通过检测PCR组，对主启动记录 (MBR) 代码、NTFS 启动扇区、NTFS 启动块、启动管理器和其他重要组件进行检查，如果被更改，则第2步将出错，要求输入recovery PIN值。</p>
+</blockquote>
+<p><strong>详细原理请跳转至Microsoft官方文档：<a class="link" href="https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/"  target="_blank" rel="noopener"
+    >Microsoft Learn: BitLocker overview</a></strong></p>
+<h2 id="触发条件">触发条件</h2>
+<pre><code>1，更换主板（100%触发，把硬盘拆下做成移动硬盘也在此列）
+
+2，修改高级启动设置（高概率）
+
+3，同一台电脑上存在两个以上的系统盘或引导（高概率，PE应该也在此列）
+
+4，更换CPU/内存/显卡/网卡/加装硬盘（低概率）
+
+5，更新BIOS（低概率）
+
+6，Win10更新时崩溃卡死（低概率）
+</code></pre>
+<h2 id="解密方法-windows1011通用">解密方法 (Windows10/11通用)</h2>
+<p>以下内容涉及图片较多，建议打开Github加速器查看。</p>
+<h3 id="辨别当前磁盘状态">辨别当前磁盘状态</h3>
+<h4 id="case-1-无需解密">Case 1 （无需解密）</h4>
+<p>打开“此电脑”，若磁盘图标同下，则磁盘未被加密，无需进行任何操作！！</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 1088; 
+			flex-basis: 2612px"
+	>
+	<a href="/2024/disable-bitlocker/status1.png" data-size="762x70">
+		<img src="/2024/disable-bitlocker/status1.png"
+			width="762"
+			height="70"
+			srcset="/2024/disable-bitlocker/status1_hu19fa987ca6fc814523aff5dbee594014_5893_480x0_resize_box_3.png 480w, /2024/disable-bitlocker/status1_hu19fa987ca6fc814523aff5dbee594014_5893_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="磁盘上无任何标记，未被加密">
+	</a>
+	
+	<figcaption>磁盘上无任何标记，未被加密</figcaption>
+	
+</figure></p>
+<h4 id="case-2-需要解密">Case 2 （需要解密）</h4>
+<p>磁盘上有带锁图标且存在感叹号，该磁盘已被加密，但还缺失连接账户的步骤！普通用户建议直接解密。</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 362; 
+			flex-basis: 870px"
+	>
+	<a href="/2024/disable-bitlocker/status2.png" data-size="254x70">
+		<img src="/2024/disable-bitlocker/status2.png"
+			width="254"
+			height="70"
+			srcset="/2024/disable-bitlocker/status2_hu0bd0f26ae9bd93285e3f90a2fecb25c0_15574_480x0_resize_box_3.png 480w, /2024/disable-bitlocker/status2_hu0bd0f26ae9bd93285e3f90a2fecb25c0_15574_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="磁盘上有带锁图标且存在感叹号，该磁盘已被加密，但还缺失连接账户的步骤">
+	</a>
+	
+	<figcaption>磁盘上有带锁图标且存在感叹号，该磁盘已被加密，但还缺失连接账户的步骤</figcaption>
+	
+</figure></p>
+<h4 id="case-3-需要解密">Case 3 （需要解密）</h4>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 390; 
+			flex-basis: 937px"
+	>
+	<a href="/2024/disable-bitlocker/status3.png" data-size="254x65">
+		<img src="/2024/disable-bitlocker/status3.png"
+			width="254"
+			height="65"
+			srcset="/2024/disable-bitlocker/status3_huc3b3d67649efda639b360f81b75aa60f_8483_480x0_resize_box_3.png 480w, /2024/disable-bitlocker/status3_huc3b3d67649efda639b360f81b75aa60f_8483_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="磁盘上出现打开的锁，该磁盘已被完全加密">
+	</a>
+	
+	<figcaption>磁盘上出现打开的锁，该磁盘已被完全加密</figcaption>
+	
+</figure></p>
+<h3 id="解密步骤请务必判断自身磁盘状态后进行操作">解密步骤（请务必判断自身磁盘状态后进行操作）</h3>
+<p>同时按Windows徽标键+R 调出 运行，并输入control，回车</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 181; 
+			flex-basis: 434px"
+	>
+	<a href="/2024/disable-bitlocker/step1.png" data-size="395x218">
+		<img src="/2024/disable-bitlocker/step1.png"
+			width="395"
+			height="218"
+			srcset="/2024/disable-bitlocker/step1_hu1ad58a6de2d5dce3a768a2028ff668c4_42263_480x0_resize_box_3.png 480w, /2024/disable-bitlocker/step1_hu1ad58a6de2d5dce3a768a2028ff668c4_42263_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="同时按Windows徽标键&#43;R 调出 运行，并输入control，回车">
+	</a>
+	
+	<figcaption>同时按Windows徽标键+R 调出 运行，并输入control，回车</figcaption>
+	
+</figure></p>
+<p>将查看方式改为“小图标”</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 179; 
+			flex-basis: 430px"
+	>
+	<a href="/2024/disable-bitlocker/step2.png" data-size="1109x618">
+		<img src="/2024/disable-bitlocker/step2.png"
+			width="1109"
+			height="618"
+			srcset="/2024/disable-bitlocker/step2_hud75ad39012b4948563eaa812025e936e_246769_480x0_resize_box_3.png 480w, /2024/disable-bitlocker/step2_hud75ad39012b4948563eaa812025e936e_246769_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="将查看方式改为“小图标”">
+	</a>
+	
+	<figcaption>将查看方式改为“小图标”</figcaption>
+	
+</figure></p>
+<p>单击“Bitlocker驱动器加密”</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 223; 
+			flex-basis: 536px"
+	>
+	<a href="/2024/disable-bitlocker/step3.png" data-size="1126x504">
+		<img src="/2024/disable-bitlocker/step3.png"
+			width="1126"
+			height="504"
+			srcset="/2024/disable-bitlocker/step3_hua87df2787f3a286621259056406910b0_221800_480x0_resize_box_3.png 480w, /2024/disable-bitlocker/step3_hua87df2787f3a286621259056406910b0_221800_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="单击“Bitlocker驱动器加密”">
+	</a>
+	
+	<figcaption>单击“Bitlocker驱动器加密”</figcaption>
+	
+</figure></p>
+<p>选择要解密的驱动器，单击“关闭BitLocker，并授予权限</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 115; 
+			flex-basis: 276px"
+	>
+	<a href="/2024/disable-bitlocker/step4.png" data-size="612x532">
+		<img src="/2024/disable-bitlocker/step4.png"
+			width="612"
+			height="532"
+			srcset="/2024/disable-bitlocker/step4_hu7b09272d50ebb46126ef10c50b65985d_163230_480x0_resize_box_3.png 480w, /2024/disable-bitlocker/step4_hu7b09272d50ebb46126ef10c50b65985d_163230_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="选择要解密的驱动器，单击“关闭BitLocker”，并授予权限">
+	</a>
+	
+	<figcaption>选择要解密的驱动器，单击“关闭BitLocker”，并授予权限</figcaption>
+	
+</figure></p>
+<pre><code>注意：解密过程会消耗一段时间，根据磁盘性能和磁盘内已有文件大小相关，解密时可正常使用电脑，期间可以关机，但是异常断电会导致数据丢失！！！
+</code></pre>
+<blockquote>
+<p>若需输入恢复密钥，可在微软账户里寻找到密钥，<strong><a class="link" href="https://account.microsoft.com/devices/recoverykey?refd=account.microsoft.com"  target="_blank" rel="noopener"
+    >微软官网</a></strong></p>
+</blockquote>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 244; 
+			flex-basis: 587px"
+	>
+	<a href="/2024/disable-bitlocker/key.png" data-size="1232x503">
+		<img src="/2024/disable-bitlocker/key.png"
+			width="1232"
+			height="503"
+			srcset="/2024/disable-bitlocker/key_hu3cb8847aa3b1670fecacda07b21d02d2_244148_480x0_resize_box_3.png 480w, /2024/disable-bitlocker/key_hu3cb8847aa3b1670fecacda07b21d02d2_244148_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="密钥示例">
+	</a>
+	
+	<figcaption>密钥示例</figcaption>
+	
+</figure></p>
+<p>将密钥ID与设备上的密钥ID匹配后，输入正确的恢复密钥即可解密。</p>
+<h2 id="参考资料">参考资料</h2>
+<p>[1] <a class="link" href="https://learn.microsoft.com/en-us/windows/security/hardware-security/tpm/tpm-fundamentals"  target="_blank" rel="noopener"
+    >Microsoft Learn/Windows/Security <strong>TPM fundamentals</strong></a></p>
+<p>[2] <a class="link" href="https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/"  target="_blank" rel="noopener"
+    >Microsoft Learn/Windows/Security <strong>BitLocker countermeasures</strong></a></p>
+<p>[3] <a class="link" href="https://zhuanlan.zhihu.com/p/29840740"  target="_blank" rel="noopener"
+    >Bitlocker、TPM和系统安全</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/system/">System</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2024/campux/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Campux校墙使用指南</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/rtl8125-driver/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【归档】PVE安装RTL8125驱动</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/timeshift/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【归档】PVE安装配置timeshift</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+<div  class="meta-item">&nbsp·&nbsp
+  <span id="busuanzi_container_page_pv">本文阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+</div>
+
+     
+        
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+
+
+</script>
+
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2024 <a href="https://stack-theme-mod.vercel.app/">TFL</a><i class="fas fa-bell"></i><br>
+      共书写了7.4k字·共 9篇文章</br><span><p>
+    </section>
+  
+      
+<div class="busuanzi-footer">
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+</div><section class="powerby">
+        
+            TFL's Personal Website | EXT-3.5.07 <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a><br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2024-07-07';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+
+
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="Type something..." />
+        
+            <button title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#原理">原理</a></li>
+    <li><a href="#触发条件">触发条件</a></li>
+    <li><a href="#解密方法-windows1011通用">解密方法 (Windows10/11通用)</a>
+      <ol>
+        <li><a href="#辨别当前磁盘状态">辨别当前磁盘状态</a>
+          <ol>
+            <li><a href="#case-1-无需解密">Case 1 （无需解密）</a></li>
+            <li><a href="#case-2-需要解密">Case 2 （需要解密）</a></li>
+            <li><a href="#case-3-需要解密">Case 3 （需要解密）</a></li>
+          </ol>
+        </li>
+        <li><a href="#解密步骤请务必判断自身磁盘状态后进行操作">解密步骤（请务必判断自身磁盘状态后进行操作）</a></li>
+      </ol>
+    </li>
+    <li><a href="#参考资料">参考资料</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+        
+            <section class="widget categories">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+  
+        </div> 
+        <h2 class="widget-title section-title">Categories</h2>
+    <div class="widget-categories--list">
+<div class="widget">
+    <h3 class="widget-title"> </h3>
+    <div class="widget-body">
+        <div class="category-list">
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/pve/" class="category-list-link">pve<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/system/" class="category-list-link">system<span class="category-list-count">1</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/%E5%BD%92%E6%A1%A3/" class="category-list-link">归档<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/%E6%95%99%E7%A8%8B/" class="category-list-link">教程<span class="category-list-count">8</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://tech.tflasp.fun/categories/%E9%93%BE%E6%8E%A5/" class="category-list-link">链接<span class="category-list-count">1</a>
+            </span></div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Archives</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2024">
+                        
+                            <span class="year">2024</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/pve/" class="font_size_6">
+                PVE
+            </a>
+        
+            <a href="/tags/system/" class="font_size_1">
+                System
+            </a>
+        
+            <a href="/tags/%E6%95%99%E7%A8%8B/" class="font_size_1">
+                教程
+            </a>
+        
+            <a href="/tags/%E9%93%BE%E6%8E%A5/" class="font_size_1">
+                链接
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

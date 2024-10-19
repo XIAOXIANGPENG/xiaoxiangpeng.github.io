@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>归档 on TFL</title>
+    <link>https://tech.tflasp.fun/categories/%E5%BD%92%E6%A1%A3/</link>
+    <description>Recent content in 归档 on TFL</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.tflasp.fun/categories/%E5%BD%92%E6%A1%A3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【归档】Proxmox VE更新CPU微码</title>
+      <link>https://tech.tflasp.fun/2024/microcode/</link>
+      <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/2024/microcode/</guid>
+      <description>问题重现 PVE 启动时，看到屏幕上有提示要求更新 microcode。 添加仓库 需要添加 unstable repo： echo &amp;quot;deb http://deb.debian.org/debian/ unstable non-free-firmware&amp;quot; &amp;gt; /etc/apt/sources.list.d/debian-unstable.list 执行更新： apt update &amp;amp;&amp;amp; apt list --upgradable 安装微码，in</description>
+    </item>
+    <item>
+      <title>【归档】PVE安装RTL8125驱动</title>
+      <link>https://tech.tflasp.fun/2024/rtl8125-driver/</link>
+      <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/2024/rtl8125-driver/</guid>
+      <description>问题重现 发现更新驱动之后，普通模式下可以正常工作，但一旦开启直通，这个驱动就会无法工作。 而因为 RTL8139 被加入黑名单，导致没有驱动可用，然后网卡就无</description>
+    </item>
+    <item>
+      <title>【归档】PVE安装配置timeshift</title>
+      <link>https://tech.tflasp.fun/2024/timeshift/</link>
+      <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/2024/timeshift/</guid>
+      <description>前面在安装 PVE 时，选择了留出 50G 大小的空间给 timeshift 使用。 为 timeshift 准备分区 查看当前磁盘分区情况 fdisk -l 查看当前硬盘情况： Disk /dev/nvme0n1: 465.76 GiB, 500107862016 bytes, 976773168 sectors Disk model: WDC WDS500G1B0C-00S6U0 Units: sectors of 1 * 512 =</description>
+    </item>
+    <item>
+      <title>【归档】PVE环境下硬盘识别问题</title>
+      <link>https://tech.tflasp.fun/2024/pve-maxio1602/</link>
+      <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/2024/pve-maxio1602/</guid>
+      <description>问题复现 爱国者P7000Z（以及所有使用MAXIO 1602主控的PCIe4.0固态）有个坑，两块以上只认一块。 经分析发现，是联芸MAP160</description>
+    </item>
+    <item>
+      <title>【归档】PVE进入Recovery模式恢复系统</title>
+      <link>https://tech.tflasp.fun/2024/pve-recovery/</link>
+      <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/2024/pve-recovery/</guid>
+      <description>问题重现 有时在经过错误的配置之后，pve 系统会无法使用，甚至无法进入系统和页面控制台。 此时需要有其他的方案来修复系统。 恢复模式 进入恢复模式 开</description>
+    </item>
+    <item>
+      <title>【归档】PVE 8 安装与优化</title>
+      <link>https://tech.tflasp.fun/2024/pveinstall/</link>
+      <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.tflasp.fun/2024/pveinstall/</guid>
+      <description>前言 该文章还在CSDN发表，文章链接：Link PVE镜像下载 1、在浏览器输入以下网址下载pve的iso安装镜像。 Download Proxmox VE 清华大学开源镜像站，下</description>
+    </item>
+  </channel>
+</rss>
